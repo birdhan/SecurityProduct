@@ -15,6 +15,8 @@
     		替我们显示的配置了最新版的注解的处理器映射器和处理器适配器 -->
     <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
     
+    <mvc:default-servlet-handler />
+    
     <!-- 配置视图解析器 
 	作用:在controller中指定页面路径的时候就不用写页面的完整路径名称了,可以直接写页面去掉扩展名的名称
 	-->

@@ -1,0 +1,97 @@
+.login_form{
+width:600px;
+height:250px;
+background:url(images/login_bg.png) no-repeat center top;
+margin:20px 0 0 145px;
+float:left;
+padding:0px 0 0 0px;
+}
+.form{
+width:600px;
+float:left;
+clear:both;
+}
+fieldset { border:none; clear:both;}
+label {font-size:11px; font-weight:bold; color:#666;}
+label a{font-size:11px; font-weight:bold; color:#666;}
+dl {clear:both; width:600px;}
+dl.submit {clear:both; width:500px; text-align:center; padding:0 0 0 90px;}
+
+dt {float:left; text-align:right; width:170px; line-height:34px; padding:0 10px 10px 0;}
+dd {float:left; width:400px; margin:0 0 10px 0;}
+
+
+label.check_label{
+padding:0 0 0 10px;
+line-height:32px;
+}
+/*Text inputs*/
+.NFText {border:none; vertical-align:middle; font:12px/15px Arial, Helvetica, sans-serif; background:none; float:left;}
+.NFTextCenter {height:26px; width:auto;background:url(img/input.gif) repeat-x 0 0; padding:8px 0 0 0; margin:0; float:left; line-height:27px;}
+.NFTextLeft, .NFTextRight {width:10px; height:34px; vertical-align:middle; float:left;}
+.NFTextLeft {background:url(img/input-left.gif) no-repeat 0 0;}
+.NFTextRight {background:url(img/input-right.gif) no-repeat 0 0;}
+/*Radio*/
+.NFRadio {cursor:pointer; position:absolute; display:block; width:20px; height:20px; border:1px solid transparent; background:url(img/radio.gif) no-repeat 0 0; z-index:2;}
+/*Checkbox*/
+.NFCheck {cursor:pointer; position:absolute;width:20px; margin:0px 0 0 0; height:20px; border:1px solid transparent; background:url(img/checkbox.gif) no-repeat 0 0; z-index:2;}
+/*Buttons*/
+.NFButton {width:auto; height:34px; padding:0 15px; font-weight:bold; background:url(img/button.gif) repeat-x 0 0; cursor:pointer; border:none;color:#FFFFFF; text-shadow:1px 1px #45add8;vertical-align:middle;}
+.NFButtonLeft, .NFButtonRight {width:10px; height:34px; vertical-align:middle;}
+.NFButtonLeft {background:url(img/button-left.gif) no-repeat 0 0;}
+.NFButtonRight {background:url(img/button-right.gif) no-repeat 0 0;}
+/*Textareas*/
+.NFTextarea {border:none; background:none; font:12px/12px Arial, Helvetica, sans-serif; margin:0;}
+.NFTextareaTop, .NFTextareaBottom {height:10px; clear:both; float:none; padding-right:15px;}
+.NFTextareaTop {background:url(img/textarea-tr.gif) no-repeat 100% 0;}
+.NFTextareaBottom {background:url(img/textarea-br.gif) no-repeat 100% 0; margin-bottom:0px;}
+.NFTextareaTopLeft, .NFTextareaBottomLeft {width:10px; height:10px;}
+.NFTextareaTopLeft {background:#f2f2e6 url(img/textarea-tl.gif) no-repeat 0 0;}
+.NFTextareaBottomLeft {background:#f2f2e6 url(img/textarea-bl.gif) no-repeat 0 0;}
+.NFTextareaLeft, .NFTextareaRight, .NFTextareaLeftH, .NFTextareaRightH {float:left; padding-bottom:10px;}
+.NFTextareaLeft, .NFTextareaLeftH {width:10px;}
+.NFTextareaLeft {background:url(img/textarea-l-off.gif) repeat-y 0 0;}
+.NFTextareaLeftH {background:url(img/textarea-l-over.gif) repeat-y 0 0;}
+.NFTextareaRight, .NFTextareaRightH {padding-right:5px; padding-bottom:0;}
+.NFTextareaRight {background:url(img/textarea-r-off.gif) repeat-y 100% 0;}
+.NFTextareaRightH {background:url(img/textarea-r-off.gif) repeat-y 100% 100%;}
+/*Files*/
+.NFFileButton {padding-bottom:0; vertical-align:bottom; cursor:pointer; background:url(img/file.gif) no-repeat 0 0; width:58px; height:34px;}
+.NFFile {position:relative; margin-bottom:5px;}
+.NFFile input.NFhidden {position:relative;  filter:alpha(opacity=0); opacity:0; z-index:2; cursor:pointer; text-align:left;}
+.NFFileNew {position:absolute; top:0px; left:0px; z-index:1;}
+/*Selects*/
+.NFSelect {height:34px; position:absolute; border:1px solid transparent; }
+.NFSelectLeft {float:left; width:12px; height:34px; background:url(img/select-left.gif) no-repeat 0 0; vertical-align:middle;}
+.NFSelectRight {height:34px; width:310px; background:url(img/select-right.gif) no-repeat 100% 0; cursor:pointer; font:12px/21px Arial, Helvetica, sans-serif; color:#000; padding-left:3px; margin-left:3px; line-height:34px;}
+.NFSelectTarget {position:absolute; background:none; margin-left:-13px; margin-top:0px; z-index:3; left:0; top:0; padding-bottom:13px;}
+.NFSelectOptions {position:relative; float:left; margin-left:16px; margin-top:26px; list-style:none; padding:0px; line-height:18px; color:#000; z-index:4; max-height:200px;  left:0; top:0;}
+.NFSelectOptions li {padding:3px 0px 3px 0; width:307px;background:#efefef;}
+.NFSelectOptions a {display:block; text-decoration:none; color:#000; padding:3px 0 3px 6px; background:none;}
+.NFSelectOptions a.NFOptionActive {background:#ecf8fd;}
+.NFSelectOptions a:hover {background:#ecf8fd;}
+/*Multiple Selects*/
+.NFMultiSelect {border:0; background:none; margin:0;}
+.NFMultiSelectTop, .NFMultiSelectBottom {height:5px; clear:both; float:none; padding-right:10px;}
+.NFMultiSelectTop {background:url(img/textarea-tr.png) no-repeat 100% 0;}
+.NFMultiSelectBottom {background:url(img/textarea-br.png) no-repeat 100% 0; margin-bottom:5px;}
+.NFMultiSelectTopLeft, .NFMultiSelectBottomLeft {width:5px; height:5px;}
+.NFMultiSelectTopLeft {background:#f2f2e6 url(img/textarea-tl.png) no-repeat 0 0;}
+.NFMultiSelectBottomLeft {background:#f2f2e6 url(img/textarea-bl.png) no-repeat 0 0;}
+.NFMultiSelectLeft, .NFMultiSelectRight, .NFMultiSelectLeftH, .NFMultiSelectRightH {float:left; padding-bottom:5px;}
+.NFMultiSelectLeft, .NFMultiSelectLeftH {width:5px;}
+.NFMultiSelectLeft {background:url(img/textarea-l-off.png) repeat-y 0 0;}
+.NFMultiSelectLeftH {background:url(img/textarea-l-over.png) repeat-y 0 0;}
+.NFMultiSelectRight, .NFMultiSelectRightH {padding-right:5px; padding-bottom:0;}
+.NFMultiSelectRight {background:url(img/textarea-r-off.png) repeat-y 100% 0;}
+.NFMultiSelectRightH {background:url(img/textarea-r-over.png) repeat-y 100% 0;}
+
+/*Focused*/
+.NFfocused {border:1px dotted #666;}
+/*Hovered*/
+.NFh {background-position:0 100%;}
+.NFhr {background-position:100% 100%;}
+/*Hidden*/
+.NFhidden {opacity:0; z-index:-1; position:relative;}
+/*Safari*/
+select, input, textarea, button {outline:none; resize:none;}

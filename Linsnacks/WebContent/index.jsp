@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-asdfsadf
+<script type="text/javascript">
+window.location.href="WEB-INF/jsp/index.jsp";
+
+</script>
 </body>
 </html>

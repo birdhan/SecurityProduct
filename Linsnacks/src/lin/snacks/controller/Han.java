@@ -11,4 +11,10 @@ public class Han {
 		
 		return "success";
 	}
+	
+	@RequestMapping("/index")
+	public String index() {
+		
+		return "index";
+	}
 }
