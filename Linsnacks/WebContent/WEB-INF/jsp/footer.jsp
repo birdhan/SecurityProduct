@@ -30,7 +30,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/plugins/elevatezoom/jquery.elevatezoom.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/plugins/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="http://ditu.google.cn/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/good.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>

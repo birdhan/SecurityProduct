@@ -51,7 +51,7 @@
 			<div class="grid-item nike">
 			  <div class="grid-item__content-wrapper">
 				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
@@ -72,7 +72,7 @@
 			<div class="grid-item nike">
 			  <div class="grid-item__content-wrapper">
 				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
