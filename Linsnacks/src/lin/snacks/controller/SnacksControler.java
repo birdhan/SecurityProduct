@@ -19,7 +19,11 @@ private SnackService snackService;
 		
 		return "success";
 	}
-	
+	/**
+	 * 按预定查询
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/index")
 	public String index(Model model) {
 		List<Snack> list = snackService.findSnackByAll();
@@ -27,16 +31,28 @@ private SnackService snackService;
 		return "index";
 	}
 	
+	
+	/**
+	 * 零食详情查询
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/details")
 	public String details(String id,Model model) {
 		Snack snack = snackService.findSnackById(id);
 		model.addAttribute("snack", snack);
 		return "index_detail";
 	}
-	
+	/**
+	 * 设计交流
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/design")
-	public String design() {
-		
+	public String design(Model model) {
+		List<Snack> list = snackService.findSnackByDesign();
+		model.addAttribute("list", list);
 		return "design";
 	}
 	@RequestMapping("/designdetails")
@@ -44,9 +60,15 @@ private SnackService snackService;
 		
 		return "design_detail";
 	}
+	
+	/**
+	 *  上线查询
+	 * @return
+	 */
 	@RequestMapping("/upindex")
-	public String upindex() {
-		
+	public String upindex(Model model) {
+		List<Snack> list = snackService.findSnackByOnline();
+		model.addAttribute("list", list);
 		return "upindex";
 	}
 	

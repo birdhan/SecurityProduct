@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <jsp:include page="header.jsp"></jsp:include>
@@ -25,7 +26,7 @@
 			<div class="grid-sizer"></div>
 			
 			<!-- 循环商品列表 -->
-			
+			<c:forEach items="${list}" var="list">
 			<div class="grid-item nike">
 			  <div class="grid-item__content-wrapper">
 				<div class="ps-shoe mb-30">
@@ -34,87 +35,18 @@
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
 					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
-					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
+					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：${list.designer}</a>
+					  <p class="ps-shoe__categories"><a href="#">热度：${list.chickrate}</a></p>
 					</div>
 					</div>
-					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
-					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB 120</span>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			
-			
-			
-			<div class="grid-item nike">
-			  <div class="grid-item__content-wrapper">
-				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
-				  </div>
-				  <div class="ps-shoe__content">
-					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
-					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
-					</div>
-					</div>
-					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
-					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB 120</span>
+					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是${list.name}</a>
+					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB ${list.price}</span>
 					</div>
 				  </div>
 				</div>
 			  </div>
 			</div>
-			
-			
-			
-			<div class="grid-item nike">
-			  <div class="grid-item__content-wrapper">
-				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
-				  </div>
-				  <div class="ps-shoe__content">
-					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
-					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
-					</div>
-					</div>
-					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
-					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB 120</span>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			
-			
-			<div class="grid-item nike">
-			  <div class="grid-item__content-wrapper">
-				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
-				  </div>
-				  <div class="ps-shoe__content">
-					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
-					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
-					</div>
-					</div>
-					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
-					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB 120</span>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			
-			
-			
-			
-			
+			</c:forEach>
 			
 			
 			

@@ -6,5 +6,13 @@ import lin.snacks.pojo.Snack;
 
 public interface SnackMapper {
 	public List<Snack>findSnackByAll();
+	
 	public Snack findSnackById(String id);
+	
+	public List<Snack> findSnackByDesign();
+	
+	public List<Snack> findSnackByOnline();
+    
+	public List<Snack> findSnackByAdvanced();
+	
 }

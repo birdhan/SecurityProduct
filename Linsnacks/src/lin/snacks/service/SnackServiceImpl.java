@@ -22,6 +22,21 @@ private SnackMapper snackMapper;
 		Snack findSnackById1 = snackMapper.findSnackById(id);
 		return findSnackById1;
 	}
+	@Override
+	public List<Snack> findSnackByDesign() {
+		List<Snack> design = snackMapper.findSnackByDesign();
+		return design;
+	}
+	@Override
+	public List<Snack> findSnackByOnline() {
+		List<Snack> byOnline = snackMapper.findSnackByOnline();
+		return byOnline;
+	}
+	@Override
+	public List<Snack> findSnackByAdvanced() {
+		List<Snack> byAdvanced = snackMapper.findSnackByAdvanced();
+		return byAdvanced;
+	}
 	
 
 }
