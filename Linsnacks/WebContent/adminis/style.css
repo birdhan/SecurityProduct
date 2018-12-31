@@ -457,3 +457,38 @@ margin-right: 2px;
 border: 1px solid #f3f3f3;
 color: #ccc;
 }
+
+.denglu{
+	width: 600px;
+	height:300px;
+	/*border: 5px blue solid;*/
+	position:fixed;
+	top:-500px;
+	left:20%;
+	z-index:6;
+	transition:0.3s 0.5s;
+	text-align: center;
+	background-image: url(images/bg.jpg);
+	border-radius:15px;
+	
+}
+.denglu.on{
+	top: 100px;
+}
+.denglu1{
+	width: 600px;
+	height:300px;
+	/*border: 5px blue solid;*/
+	position:fixed;
+	top:-500px;
+	left:20%;
+	z-index:6;
+	transition:0.3s 0.5s;
+	text-align: center;
+	background-image: url(images/bg.jpg);
+	border-radius:15px;
+	
+}
+.denglu1.on{
+	top: 100px;
+}
