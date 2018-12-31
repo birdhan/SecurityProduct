@@ -65,15 +65,15 @@
 	  </div>
 	  <div class="navigation__column center">
 			<ul class="main-menu menu">
-			  <li class="menu-item menu-item-has-children dropdown"><a href="index.html">首页</a>
+			  <li class="menu-item menu-item-has-children dropdown"><a href="${pageContext.request.contextPath }/index">首页</a>
 			  </li>
-			  <li class="menu-item menu-item-has-children dropdown"><a href="index.html">设计交流</a>
+			  <li class="menu-item menu-item-has-children dropdown"><a href="${pageContext.request.contextPath }/design">设计交流</a>
 			  </li>
-			  <li class="menu-item menu-item-has-children dropdown"><a href="index.html">上线产品</a>
+			  <li class="menu-item menu-item-has-children dropdown"><a href="${pageContext.request.contextPath }/upindex">上线产品</a>
 			  </li>
-			  <li class="menu-item menu-item-has-children dropdown"><a href="index.html">下线产品</a>
-			  </li>
-			  <li class="menu-item menu-item-has-children dropdown"><a href="${pageContext.request.contextPath }/adminis/index.jsp">我的仓库</a>
+			  
+			  
+			  <li class="menu-item menu-item-has-children dropdown"><a href="${pageContext.request.contextPath }/personal">我的仓库</a>
 			  </li>
 			  
 			</ul>

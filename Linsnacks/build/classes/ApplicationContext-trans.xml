@@ -19,7 +19,7 @@ http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	
 	<!-- 通知 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
+		<tx:attributes>  
 			<!-- 传播行为 -->
 			<tx:method name="save*" propagation="REQUIRED" />
 			<tx:method name="insert*" propagation="REQUIRED" />

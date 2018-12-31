@@ -9,7 +9,7 @@
   <div class="ps-section--features-product ps-section masonry-root">
 	<div class="ps-container">
 	  <div class="ps-section__header mb-50">
-		<h3 class="ps-section__title" data-mask="零食预约">- 预约平台</h3>
+		<h3 class="ps-section__title" data-mask="健康零食">- 美味共享</h3>
 		<ul class="ps-masonry__filter">
 		  <li class="current"><a href="#" data-filter="*">All <sup>8</sup></a></li>
 		  <li><a href="#" data-filter=".nike">Nike <sup>1</sup></a></li>
@@ -33,9 +33,9 @@
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success">详情</button>&nbsp;<button class="btn btn-success">预约</button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">上线时间：2015-01-03</a>
-					  <p class="ps-shoe__categories"><a href="#">预约数量：2000</a></p>
+					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
+					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
+					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
 					</div>
 					</div>
 					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
@@ -51,13 +51,35 @@
 			<div class="grid-item nike">
 			  <div class="grid-item__content-wrapper">
 				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success">详情</button>&nbsp;<button class="btn btn-success">预约</button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">上线时间：2015-01-03</a>
-					  <p class="ps-shoe__categories"><a href="#">预约数量：2000</a></p>
+					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
+					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
+					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
+					</div>
+					</div>
+					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
+					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB 120</span>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			
+			
+			
+			<div class="grid-item nike">
+			  <div class="grid-item__content-wrapper">
+				<div class="ps-shoe mb-30">
+				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
+				  </div>
+				  <div class="ps-shoe__content">
+					<div class="ps-shoe__variants">
+					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
+					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
+					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
 					</div>
 					</div>
 					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
@@ -76,9 +98,9 @@
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success">详情</button>&nbsp;<button class="btn btn-success">预约</button></div>
-					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">上线时间：2015-01-03</a>
-					  <p class="ps-shoe__categories"><a href="#">预约数量：2000</a></p>
+					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
+					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：小王</a>
+					  <p class="ps-shoe__categories"><a href="#">热度：2000</a></p>
 					</div>
 					</div>
 					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是零食</a>
@@ -88,6 +110,13 @@
 				</div>
 			  </div>
 			</div>
+			
+			
+			
+			
+			
+			
+			
 			
 		  </div>
 		</div>

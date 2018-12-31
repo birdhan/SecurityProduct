@@ -3,16 +3,24 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
-<div class="ps-footer__copyright" style="background-color: #5b5b5b;">
-	  <div class="ps-container">
-		<div class="row">
-			  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-				<p>已经到底了，如果还是没有你喜欢的东东，请发邮件到顶部的邮箱，我们会尽快处理</p>
-			  </div>
-			  
-		</div>
+<div class="ps-subscribe">
+	<div class="ps-container">
+	  <div class="row">
+			<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+			  <h3><i class="fa fa-envelope"></i>小琳时刻等待着您的来信</h3>
+			</div>
+			<div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 ">
+			  <form class="ps-subscribe__form" action="https://www.baidu.com/s">
+				<input class="form-control" type="text" name="wd">
+				<button>搜一搜</button>
+			  </form>
+			</div>
+			<!-- <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 ">
+			  <p>...and receive  <span>$20</span>  coupon for first shopping.</p>
+			</div> -->
 	  </div>
 	</div>
+  </div>
 
 
 

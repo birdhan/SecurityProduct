@@ -2624,7 +2624,7 @@ textarea.form-control {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
+  width: 200px;
   height: 35px;
   z-index: 10;
   background-color: #2AC37D; }
