@@ -13,6 +13,7 @@ package lin.snacks.pojo;
 		private String utel;
 		private String uname;
 		private String number;
+		private String otime;
 		public String getId() {
 			return id;
 		}
@@ -85,12 +86,20 @@ package lin.snacks.pojo;
 		public void setNumber(String number) {
 			this.number = number;
 		}
+		
+		public String getOtime() {
+			return otime;
+		}
+		public void setOtime(String otime) {
+			this.otime = otime;
+		}
 		@Override
 		public String toString() {
 			return "Order [id=" + id + ", uid=" + uid + ", sid=" + sid + ", sname=" + sname + ", spic=" + spic
 					+ ", ostatus=" + ostatus + ", owd=" + owd + ", onumber=" + onumber + ", uaddress=" + uaddress
-					+ ", utel=" + utel + ", uname=" + uname + ", number=" + number + "]";
+					+ ", utel=" + utel + ", uname=" + uname + ", number=" + number + ", otime=" + otime + "]";
 		}
+		
 	
 	}
   
