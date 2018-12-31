@@ -1,11 +1,19 @@
 package lin.snacks.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-public class Han {
+import lin.snacks.pojo.Snack;
+import lin.snacks.service.SnackService;
 
+@Controller
+public class SnacksControler {
+@Autowired
+private SnackService snackService;
 	@RequestMapping("/test")
 	public String test() {
 		
@@ -13,14 +21,16 @@ public class Han {
 	}
 	
 	@RequestMapping("/index")
-	public String index() {
-		
+	public String index(Model model) {
+		List<Snack> list = snackService.findSnackByAll();
+		model.addAttribute("list", list);
 		return "index";
 	}
 	
 	@RequestMapping("/details")
-	public String details() {
-		
+	public String details(String id,Model model) {
+		Snack snack = snackService.findSnackById(id);
+		model.addAttribute("snack", snack);
 		return "index_detail";
 	}
 	

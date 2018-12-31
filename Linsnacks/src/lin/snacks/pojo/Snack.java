@@ -14,6 +14,7 @@ package lin.snacks.pojo;
 		private String status;
 		private String price;
 		private String chickrate;
+		private String inventory;
 		public String getId() {
 			return id;
 		}
@@ -92,12 +93,20 @@ package lin.snacks.pojo;
 		public void setChickrate(String chickrate) {
 			this.chickrate = chickrate;
 		}
+		
+		public String getInventory() {
+			return inventory;
+		}
+		public void setInventory(String inventory) {
+			this.inventory = inventory;
+		}
 		@Override
 		public String toString() {
 			return "Snack [id=" + id + ", name=" + name + ", title=" + title + ", describe=" + describe + ", special="
 					+ special + ", designer=" + designer + ", picture=" + picture + ", uptime=" + uptime + ", upsize="
 					+ upsize + ", type=" + type + ", status=" + status + ", price=" + price + ", chickrate=" + chickrate
-					+ "]";
+					+ ", inventory=" + inventory + "]";
 		}
+		
 	
 	}

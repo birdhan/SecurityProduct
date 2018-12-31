@@ -6,6 +6,7 @@ public class Vote {
 	private String uid;
 	private String uname;
 	private String type;
+	private String vtime;
 	public String getId() {
 		return id;
 	}
@@ -36,10 +37,18 @@ public class Vote {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
+	public String getVtime() {
+		return vtime;
+	}
+	public void setVtime(String vtime) {
+		this.vtime = vtime;
+	}
 	@Override
 	public String toString() {
 		return "Vote [id=" + id + ", snacksid=" + snacksid + ", uid=" + uid + ", uname=" + uname + ", type=" + type
-				+ "]";
+				+ ", vtime=" + vtime + "]";
 	}
+	
 	
 }

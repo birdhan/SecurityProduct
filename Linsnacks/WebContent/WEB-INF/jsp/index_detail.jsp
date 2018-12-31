@@ -26,27 +26,28 @@
 			</div>
 		  </div>
 		<!--  右侧横线 -->
+		  
 		  <div class="ps-product__info">
 			<div class="ps-product__rating" style="border-bottom: 2px solid #00afc7;height: 50px;">
 			  
 			</div>
-			<h1>韩国炒年糕</h1>
-			<p class="ps-product__category"><a href="#"> 首批预约数量：2000</a>,<a href="#"> 剩余数量：100</a></p>
-			<h3 class="ps-product__price"><del>RMB 330</del></h3>
+			<h1>${snack.name}</h1>
+			<p class="ps-product__category"><a href="#"> 首批预约数量：${snack.upsize}</a>,<a href="#"> 剩余数量：${snack.inventory}</a></p>
+			<h3 class="ps-product__price"><del>RMB ${snack.price}</del></h3>
 			<div class="ps-product__block ps-product__quickview">
 			  <h4>特点</h4>
-			  <p style="border-bottom: 1px solid #e5e5e5;">老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了</p>
+			  <p style="border-bottom: 1px solid #e5e5e5;">${snack.special}</p>
 			</div>
 			<div class="ps-product__block ps-product__style">
 			  <h5>设计师</h5>
-			  <h4>陈独秀</h4>
+			  <h4>${snack.designer}</h4>
 			</div>
 			<div class="ps-product__block ps-product__style">
 			  <h5>点击量</h5>
-			  <h4>123</h4>
+			  <h4>${snack.chickrate}</h4>
 			</div>
 			<div class="ps-product__block ps-product__size">
-			  <h4>预计上线时间<a href="#">2018-20-20</a></h4>
+			  <h4>预计上线时间<a href="#">${snack.uptime}</a></h4>
 			  
 			  <!-- <div class="form-group">
 				<input class="form-control" type="number" value="1">
@@ -56,6 +57,7 @@
 			  <!-- <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div> -->
 			</div>
 		  </div>
+		 
 		  <div class="clearfix"></div>
 		  <div class="ps-product__content mt-50">
 			<ul class="tab-list" role="tablist">
@@ -64,8 +66,7 @@
 		  </div>
 		  <div class="tab-content mb-60">
 			<div class="tab-pane active" role="tabpanel" id="tab_01">
-			  <p>不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好</p>
-			  <p>不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好</p>
+			  <p> ${snack.describe}</p>
 			</div>
 		
 		  </div>

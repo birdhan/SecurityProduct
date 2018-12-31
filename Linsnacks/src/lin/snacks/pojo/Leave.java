@@ -7,6 +7,7 @@ package lin.snacks.pojo;
 		private String uname;
 		private String message;
 		private String status;
+		private String ltime;
 		public String getId() {
 			return id;
 		}
@@ -43,10 +44,18 @@ package lin.snacks.pojo;
 		public void setStatus(String status) {
 			this.status = status;
 		}
+		
+		public String getLtime() {
+			return ltime;
+		}
+		public void setLtime(String ltime) {
+			this.ltime = ltime;
+		}
 		@Override
 		public String toString() {
 			return "Leave [id=" + id + ", snacksid=" + snacksid + ", uid=" + uid + ", uname=" + uname + ", message="
-					+ message + ", status=" + status + "]";
+					+ message + ", status=" + status + ", ltime=" + ltime + "]";
 		}
+		
 	
 	}
