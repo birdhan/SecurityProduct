@@ -23,7 +23,7 @@
 			  <div class="grid-item__content-wrapper">
 				
 				  <div class="ps-shoe__thumbnail">
-				  <div class="ps-badge" ><span><a href="www.baidu.com">加入设计交流</a></span></div>
+				  <div class="ps-badge" ><span><a href="${pageContext.request.contextPath }/designdetails">加入设计交流</a></span></div>
 				  <img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
 				  
 				  </div>
