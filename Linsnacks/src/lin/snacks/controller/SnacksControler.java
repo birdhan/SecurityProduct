@@ -148,5 +148,9 @@ public class SnacksControler {
 		snackService.insertsnack(snack);
 		return "adminis/index";
 	}
+	
+	
+	
+	
 
 }
