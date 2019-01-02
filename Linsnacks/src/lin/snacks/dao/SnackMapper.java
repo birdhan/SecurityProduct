@@ -15,4 +15,6 @@ public interface SnackMapper {
     
 	public List<Snack> findSnackByAdvanced();
 	
+	public void insertsnack(Snack snack);
+	
 }

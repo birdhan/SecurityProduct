@@ -112,30 +112,28 @@ $(function () {
 				
 				
 				
-				<form action="https://www.baidu.com//favicon.ico" style="margin-top: 20px;" id="form1" enctype="multipart/form-data">
+				<form action="${pageContext.request.contextPath }/adminis1" style="margin-top: 20px;" id="form1" enctype="multipart/form-data" method="post">
 					
 					
 					<div style="width: 92%;margin-left: 4%;margin-top: 20px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">商品名称</label><input type="text">
-					<label style="width: 45px;">商品描述</label><input type="text">
+					<label style="width: 45px;">商品名称</label><input type="text" name="name">
+					<label style="width: 45px;">商品描述</label><input type="text" name="designer">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">商品主题</label><input type="text">
-					<label style="width: 45px;">商品特点</label><input type="text">
-					
+					<label style="width: 45px;">商品主题</label><input type="text" name="title">
+					<label style="width: 45px;">商品特点</label><input type="text" name="special">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">设计师名</label><input type="text">
-					<label style="width: 45px;">商品状态</label><select style="width: 160px;"><option value="order">预约状态</option><option value="design">测试交流</option><option value="online">正式上线</option></select>
-					
+					<label style="width: 45px;">设计师名</label><input type="text" name="designer">
+					<label style="width: 45px;">商品状态</label><select style="width: 160px;" name="status"><option value="order">预约状态</option><option value="design">测试交流</option><option value="online">正式上线</option></select>
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">点击热度</label><input type="text" value="0"> 
-					<label style="width: 45px;">商品类型</label><select style="width: 160px;" name=""><option value="">西式</option><option>糖果</option><option>坚果</option><option>膨化</option><option>素肉</option></select>
+					<label style="width: 45px;">点击热度</label><input type="text" value="0" name="chickrate"> 
+					<label style="width: 45px;">商品类型</label><select style="width: 160px;" name="type"><option value="">西式</option><option>糖果</option><option>坚果</option><option>膨化</option><option>素肉</option></select>
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">上线数量</label><input type="text">
-					<label style="width: 45px;">商品价格</label><input type="text">
+					<label style="width: 45px;">上线数量</label><input type="text" name="upsize">
+					<label style="width: 45px;">商品价格</label><input type="text" name="price">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 50px;">
 					<div style="float: left;"><label style="width: 45px;">上传图片</label></div><div style="float: left;"><input type="file" id="imageFile" name="imageFile"

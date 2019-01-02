@@ -37,6 +37,11 @@ private SnackMapper snackMapper;
 		List<Snack> byAdvanced = snackMapper.findSnackByAdvanced();
 		return byAdvanced;
 	}
+	@Override
+	public void insertsnack(Snack snack) {
+		snackMapper.insertsnack(snack);
+		
+	}
 	
 
 }

@@ -14,4 +14,6 @@ public interface SnackService {
 	public List<Snack> findSnackByOnline();
 	
 	public List<Snack> findSnackByAdvanced();
+	
+	public void insertsnack(Snack snack);
 }
