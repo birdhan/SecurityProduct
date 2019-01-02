@@ -55,9 +55,16 @@ private SnackService snackService;
 		model.addAttribute("list", list);
 		return "design";
 	}
+	/**
+	 * 设计交流详情
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/designdetails")
-	public String designdetails() {
-		
+	public String designdetails(String id ,Model model) {
+		Snack snack = snackService.findSnackById(id);
+		model.addAttribute("snack", snack);
 		return "design_detail";
 	}
 	
@@ -72,12 +79,19 @@ private SnackService snackService;
 		return "upindex";
 	}
 	
-	
+	/**
+	 * 上线产品详情查询
+	 * @param id
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/upindexdetails")
-	public String upindexdetails() {
-		
+	public String upindexdetails(String id,Model model) {
+		Snack snack = snackService.findSnackById(id);
+		model.addAttribute("snack", snack);
 		return "upindex_detail";
 	}
+	
 	
 	@RequestMapping("/personal")
 	public String personal() {

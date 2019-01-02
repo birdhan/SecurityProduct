@@ -30,23 +30,23 @@
 			<div class="ps-product__rating" style="border-bottom: 2px solid #00afc7;height: 5px;">
 			  
 			</div>
-			<h1>韩国炒年糕</h1>
+			<h1>${snack.name}</h1>
 			
-			<h3 class="ps-product__price">RMB 330</h3>
+			<h3 class="ps-product__price">RMB ${snack.price}</h3>
 			<div class="ps-product__block ps-product__quickview">
 			  <h4>特点</h4>
-			  <p style="border-bottom: 1px solid #e5e5e5;">老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了</p>
+			  <p style="border-bottom: 1px solid #e5e5e5;">${snack.special}</p>
 			</div>
 			<div class="ps-product__block ps-product__style">
 			  <h5>设计师</h5>
-			  <h4>陈独秀</h4>
+			  <h4>${snack.designer}</h4>
 			</div>
 			<div class="ps-product__block ps-product__style">
 			  <h5>热度</h5>
-			  <h4>123</h4>
+			  <h4>${snack.chickrate}</h4>
 			</div>
 			<div class="ps-product__block ps-product__size">
-			  <h4>更新时间<a href="#">2018-20-20</a></h4>
+			  <h4>更新时间<a href="#">${snack.uptime}</a></h4>
 			  <h4>购买数量</h4>
 			  <!-- <div class="form-group">
 				<input class="form-control" type="number" value="1">
@@ -69,8 +69,7 @@
 		  </div>
 		  <div class="tab-content mb-60">
 			<div class="tab-pane active" role="tabpanel" id="tab_01">
-			  <p>不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好</p>
-			  <p>不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好</p>
+			  <p>${snack.describe}</p>
 			</div>
 				<div class="tab-pane" role="tabpanel" id="tab_02">
 							<p class="mb-20">

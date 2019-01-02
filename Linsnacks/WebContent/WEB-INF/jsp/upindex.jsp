@@ -34,13 +34,13 @@
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">
-					  <div><button class="btn btn-success" style="width: 100%"><a href="${pageContext.request.contextPath }/upindexdetails">详情</a></button></div>
+					  <div><a href="${pageContext.request.contextPath }/upindexdetails?id=${list.id}"><button class="btn btn-success" style="width: 100%">详情</button></a></div>
 					  <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">设计师：${list.designer}</a>
 					  <p class="ps-shoe__categories"><a href="#">热度：${list.chickrate}</a></p>
 					</div>
 					</div>
 					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是${list.name}</a>
-					  <p class="ps-shoe__categories"><a href="#"> 健康 安全 美丽 大方</a></p><span class="ps-shoe__price"> RMB ${list.price}</span>
+					  <p class="ps-shoe__categories"><a href="#"> ${list.special}</a></p><span class="ps-shoe__price"> RMB ${list.price}</span>
 					</div>
 				  </div>
 				</div>

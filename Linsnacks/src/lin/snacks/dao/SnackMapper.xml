@@ -19,5 +19,7 @@
 	<select id="findSnackByAdvanced">
 	SELECT * FROM snack a WHERE a.name LIKE '%${name}%'	
 	</select>
+
+	
 	
 </mapper>

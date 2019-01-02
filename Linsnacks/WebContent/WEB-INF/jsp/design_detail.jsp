@@ -36,26 +36,26 @@
 							style="border-bottom: 2px solid #00afc7; height: 20px; border-top: 2px solid #00afc7;">
 						</div>
 						<h1>韩春阳 | 前来参与 |</h1>
-						<h4>泰国咖喱饭的设计与交流</h4>
+						<h4>${snack.name}的设计与交流</h4>
 						<h3 class="ps-product__price">
 							设计价格：
-							<del>RMB 330</del>
+							<del>RMB ${snack.price}</del>
 						</h3>
 						<div class="ps-product__block ps-product__quickview">
 							<h4>主题概况</h4>
-							<p style="border-bottom: 1px solid #e5e5e5;">老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了老好吃了</p>
+							<p style="border-bottom: 1px solid #e5e5e5;">${snack.special}</p>
 						</div>
 						<div class="ps-product__block ps-product__style">
 							<h5>主设计师&nbsp;&nbsp;辅助设计师</h5>
-							<h4>陈独秀&nbsp;&nbsp;&nbsp;韩春阳</h4>
+							<h4>${snack.designer}&nbsp;&nbsp;&nbsp;韩春阳</h4>
 						</div>
 						<div class="ps-product__block ps-product__style">
 							<h5>点击量</h5>
-							<h4>123</h4>
+							<h4>${snack.chickrate}</h4>
 						</div>
 						<div class="ps-product__block ps-product__size">
 							<h4>
-								预计上线时间<a href="#">2018-20-20</a>
+								预计上线时间<a href="#">${snack.uptime}</a>
 							</h4>
 
 							<!-- <div class="form-group">
@@ -79,8 +79,7 @@
 					</div>
 					<div class="tab-content mb-60">
 						<div class="tab-pane active" role="tabpanel" id="tab_01">
-							<p>不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好</p>
-							<p>不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好不知道该怎么说，就是好</p>
+							<p>${snack.describe}</p>
 						</div>
 						
 						<div class="ps-product__content mt-50">
