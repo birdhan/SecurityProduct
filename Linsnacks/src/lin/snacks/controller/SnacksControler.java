@@ -102,6 +102,8 @@ private SnackService snackService;
 	@RequestMapping("/adminis")
 	public String adminis() {
 		
+		
+		
 		return "adminis/index";
 	}
 	
