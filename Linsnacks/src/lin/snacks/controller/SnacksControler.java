@@ -113,5 +113,12 @@ private SnackService snackService;
 		
 		return "personal4";
 	}
+	@RequestMapping("/adminis")
+	public String adminis() {
+		
+		
+		
+		return "adminis/index";
+	}
 	
 }

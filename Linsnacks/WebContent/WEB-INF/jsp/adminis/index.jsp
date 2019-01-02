@@ -5,12 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<%-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/js/plugins/bootstrap/dist/css/bootstrap.min.css" /> --%>
-<script type="text/javascript" src="clockp.js"></script>
-<script type="text/javascript" src="clockh.js"></script> 
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="ddaccordion.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/js/style.css" />
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/clockp.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/clockh.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/ddaccordion.js"></script>
 <script type="text/javascript">
 ddaccordion.init({
 	headerclass: "submenuheader", //Shared CSS class name of headers group
@@ -34,7 +33,7 @@ ddaccordion.init({
 })
 </script>
 
-<script type="text/javascript" src="jconfirmaction.jquery.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jconfirmaction.jquery.js"></script>
 <script type="text/javascript">
 	function delete1(){
 		if(confirm("确定删除这条记录？")){
@@ -47,8 +46,8 @@ ddaccordion.init({
 	
 </script>
 
-<script language="javascript" type="text/javascript" src="niceforms.js"></script>
-<link rel="stylesheet" type="text/css" media="all" href="niceforms-default.css" />
+<script language="javascript" type="text/javascript" src="${pageContext.request.contextPath }/js/niceforms.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="${pageContext.request.contextPath }/js/niceforms-default.css" />
 <script type="text/javascript">
 $(function () {
 
