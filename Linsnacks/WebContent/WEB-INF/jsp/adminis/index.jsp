@@ -220,7 +220,7 @@ function submin1(){
     
             <div class="sidebarmenu">
             
-                <a  href="">商品管理</a>
+                <a class="menuitem" href="">商品管理</a>
                 <a class="menuitem" href="">订单管理</a>
                 <a class="menuitem" href="">留言管理</a>
                 <a class="menuitem" href="">投票管理</a>
