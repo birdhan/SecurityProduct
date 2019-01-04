@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -117,14 +118,14 @@ $(function () {
 					
 					<div style="width: 92%;margin-left: 4%;margin-top: 20px;border: 1px solid #87CEEB;height: 20px;">
 					<label style="width: 45px;">商品名称</label><input type="text" name="name">
-					<label style="width: 45px;">商品描述</label><input type="text" name="designer">
+					<label style="width: 45px;">商品描述</label><input type="text" name="describese">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
 					<label style="width: 45px;">商品主题</label><input type="text" name="title">
 					<label style="width: 45px;">商品特点</label><input type="text" name="special">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">设计师名</label><input type="text" name="designer">
+					<label style="width: 45px;">设计师名</label><input type="text" name="designer"> 
 					<label style="width: 45px;">商品状态</label><select style="width: 160px;" name="status"><option value="order">预约状态</option><option value="design">测试交流</option><option value="online">正式上线</option></select>
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
@@ -259,49 +260,22 @@ function submin1(){
         </tr>
     </tfoot>
     <tbody>
+    	<c:forEach items="${list }" var="list">
     	<tr>
         	
-            <td>百草味巧克力</td>
-            <td>巧克力</td>
-            <td>RMB 25</td>
-            <td>1200</td>
+            <td>${list.name}</td>
+            <td>${list.type}</td>
+            <td>RMB ${list.price}</td>
+            <td>${list.chickrate}</td>
 
             <td><a href="#" class="bbb"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-            <td><a href="#" onclick="delete1()"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
+            <td><a href="${pageContext.request.contextPath }/deletesnackById?id=${list.id}" onclick="delete1()"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
         </tr>
+        </c:forEach>
+    	
         
-    	<tr>
-        	
-            <td>百草味巧克力</td>
-            <td>巧克力</td>
-            <td>RMB 25</td>
-            <td>1200</td>
-
-            <td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-            <td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
-        </tr>
-        
-        <tr>
-        	
-            <td>百草味巧克力</td>
-            <td>巧克力</td>
-            <td>RMB 25</td>
-            <td>1200</td>
-
-            <td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-            <td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
-        </tr>
-        
-        <tr>
-        	
-            <td>百草味巧克力</td>
-            <td>巧克力</td>
-            <td>RMB 25</td>
-            <td>1200</td>
-
-            <td><a href="#"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td>
-            <td><a href="#" class="ask"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
-        </tr>
+      
+       
         
     	        
     	

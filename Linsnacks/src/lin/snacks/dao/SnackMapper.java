@@ -17,4 +17,8 @@ public interface SnackMapper {
 	
 	public void insertsnack(Snack snack);
 	
+	public List<Snack> findSnacksByHAll();
+	
+	public void deletesnackById(String id);
+	
 }

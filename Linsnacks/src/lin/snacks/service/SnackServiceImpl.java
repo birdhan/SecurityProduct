@@ -42,6 +42,19 @@ private SnackMapper snackMapper;
 		snackMapper.insertsnack(snack);
 		
 	}
+	@Override
+	public List<Snack> findSnacksByHAll() {
+		// TODO Auto-generated method stub
+		List<Snack> hAll = snackMapper.findSnacksByHAll();
+		return hAll;
+	}
+	@Override
+	public void deletesnackById(String id) {
+		// TODO Auto-generated method stub
+		snackMapper.deletesnackById(id);
+	}
+	
+	
 	
 
 }

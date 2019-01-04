@@ -66,7 +66,7 @@
 		  </div>
 		  <div class="tab-content mb-60">
 			<div class="tab-pane active" role="tabpanel" id="tab_01">
-			  <p> ${snack.describe}</p>
+			  <p> ${snack.describese}</p>
 			</div>
 		
 		  </div>

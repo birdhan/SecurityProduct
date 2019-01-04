@@ -128,28 +128,49 @@ public class SnacksControler {
 
 		return "personal4";
 	}
-
+	/**
+	 * 后台查询所有零食信息
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/adminis")
-	public String adminis() {
-		
+	public String adminis(Model model) {
+		List<Snack> list = snackService.findSnacksByHAll();
+		model.addAttribute("list", list);
 		return "adminis/index";
 		
 	}
 	
 	
-	
+	/**
+	 * 后台管理添加零食信息
+	 * @param snack
+	 * @param imageFile
+	 * @return
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
 	@RequestMapping("/adminis1")
 	public String adminis1(Snack snack, MultipartFile imageFile) throws IllegalStateException, IOException {
 		String fileStr = imageFile.getOriginalFilename();
-		String newfileName = UUID.randomUUID().toString() + fileStr.substring(fileStr.lastIndexOf("."));
-		imageFile.transferTo(new File("D:\\img1\\" + newfileName));
-		snack.setPicture(newfileName);
+		if (fileStr!=null) {
+			/*String newfileName = UUID.randomUUID().toString() + fileStr.substring(fileStr.lastIndexOf("."));*/
+			String newfileName = UUID.randomUUID().toString()+".jpg";
+			imageFile.transferTo(new File("D:\\img1\\" + newfileName));
+			snack.setPicture(newfileName);
+		
+		}
 		snack.setId(UUID.randomUUID().toString());
+		System.out.println(snack);
 		snackService.insertsnack(snack);
-		return "adminis/index";
+		return "redirect:/adminis";
 	}
 	
-	
+	@RequestMapping("/deletesnackById")
+	public String deletesnackById(String id) {
+		snackService.deletesnackById(id);
+		return "redirect:/adminis";
+	}
 	
 	
 

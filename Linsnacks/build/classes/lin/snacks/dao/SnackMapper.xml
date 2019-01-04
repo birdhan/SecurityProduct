@@ -21,9 +21,16 @@
 	</select>
     
     <insert id="insertsnack" parameterType="lin.snacks.pojo.Snack">
-    INSERT INTO snack (id,name,title,designer,chickrate,upsize,picture,describe,special,status,type,price)
-    VALUES(#{id},#{name},#{title},#{designer},#{chickrate},#{upsize},#{picture},#{describe},#{special},#{status},#{type},#{price})
+    insert into snack(id,name,title,describese,special,designer,picture,uptime,upsize,type,status,price,chickrate) values(#{id},#{name},#{title},#{describese},#{special},#{designer},#{picture},#{uptime},#{upsize},#{type},#{status},#{price},#{chickrate})
     </insert>
 	
+	<select id="findSnacksByHAll" resultType="lin.snacks.pojo.Snack">
+	SELECT * FROM snack
+	</select>
+	
+	<delete id="deletesnackById" parameterType="java.lang.String">
+	DELETE FROM snack  WHERE  snack.id=#{id}
+	
+	</delete>
 	
 </mapper>
