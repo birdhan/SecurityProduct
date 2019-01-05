@@ -1,16 +1,13 @@
 package lin.snacks.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import lin.snacks.pojo.Snack;
 import lin.snacks.service.SnackService;
@@ -19,11 +16,73 @@ import lin.snacks.service.SnackService;
 public class SnacksControler {
 	@Autowired
 	private SnackService snackService;
+	
+	
+	
 
-	@RequestMapping("/test")
-	public String test() {
+	/**
+	 * 请求转发登录
+	 * @return
+	 */
+	@RequestMapping("/userlogin")
+	public String userlogin() {
+		return "forward:/loginuser?value=login";
+	}
+	
+	
+	
+	/**
+	 * 用户登录与注册判断
+	 * @return
+	 */
+	@RequestMapping("/loginuser")
+	public String loginuser(HttpServletRequest request) {
+		
+		String parameter = request.getParameter("value");
+		String typesubmin="";
+		String actionurl="";
+		String url=request.getContextPath();
+		String typehid="";
 
-		return "success";
+		if(parameter.equals("快速注册")) {
+			typesubmin="马上注册";
+			actionurl=url+"/registeru";
+			typehid="0";
+						
+		}else {
+			parameter="用户登录";
+			typesubmin="确认登录";
+			actionurl=url+"/loginu";
+		}
+		request.setAttribute("value", parameter);
+		request.setAttribute("typesubmin", typesubmin);
+		request.setAttribute("actionurl", actionurl);
+		request.setAttribute("typehid", typehid);
+		
+		return "login";
+	}
+	
+	/**
+	 * 用户登录
+	 * @return
+	 */
+	@RequestMapping("/loginu")
+	public String logina() {
+		
+		
+		
+		return "redirect:/index";
+	}
+	/**
+	 * 用户注册
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/registeru")
+	public String redistera() {
+		
+		
+		return "redirect:/index";
 	}
 
 	/**
@@ -129,53 +188,10 @@ public class SnacksControler {
 
 		return "personal4";
 	}
-	/**
-	 * 后台查询所有零食信息
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping("/adminis")
-	public String adminis(Model model) {
-		List<Snack> list = snackService.findSnacksByHAll();
-		model.addAttribute("list", list);
-		return "adminis/index";
-		
-	}
 	
 	
-	/**
-	 * 后台管理添加零食信息
-	 * @param snack
-	 * @param imageFile
-	 * @return
-	 * @throws IllegalStateException
-	 * @throws IOException
-	 */
-	@RequestMapping("/adminis1")
-	public String adminis1(Snack snack, MultipartFile imageFile) throws IllegalStateException, IOException {
-		String fileStr = imageFile.getOriginalFilename();
-		if (fileStr!=null) {
-			/*String newfileName = UUID.randomUUID().toString() + fileStr.substring(fileStr.lastIndexOf("."));*/
-			String newfileName = UUID.randomUUID().toString()+".jpg";
-			imageFile.transferTo(new File("D:\\img\\" + newfileName));
-			snack.setPicture(newfileName);
-		
-		}
-		snack.setId(UUID.randomUUID().toString());
-		System.out.println(snack);
-		snackService.insertsnack(snack);
-		return "redirect:/adminis";
-	}
-	/**
-	 * 后台根据id删除商品
-	 * @param id
-	 * @return
-	 */
-	@RequestMapping("/deletesnackById")
-	public String deletesnackById(String id) {
-		snackService.deletesnackById(id);
-		return "redirect:/adminis";
-	}
+	
+	
 	
 	/**
 	 * 零食类型查询
@@ -189,6 +205,7 @@ public class SnacksControler {
 		model.addAttribute("list", list);
 		return "index";
 	}
+	
 	
 
 }

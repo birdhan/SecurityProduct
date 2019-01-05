@@ -4,6 +4,13 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+<script type="text/javascript">
+function yuyue(hanhanhan){
+	
+	
+}
+
+</script>
 <main class="ps-main">
   <div class="test">
 	<div class="container">
@@ -47,13 +54,13 @@
 			  <h4>${snack.chickrate}</h4>
 			</div>
 			<div class="ps-product__block ps-product__size">
-			  <h4>预计上线时间<a href="#">${snack.uptime}</a></h4>
+			  <h4>上线时间<a href="#">${snack.uptime}</a></h4>
 			  
 			  <!-- <div class="form-group">
 				<input class="form-control" type="number" value="1">
 			  </div> -->
 			</div>
-			<div class="ps-product__shopping"><a class="ps-btn mb-10" href="cart.html">加入预约<i class="ps-icon-next"></i></a>
+			<div class="ps-product__shopping"><a class="ps-btn mb-10" style="cursor: pointer;" onclick="yuyue('${snack.id}')">加入预约<i class="ps-icon-next"></i></a>
 			  <!-- <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div> -->
 			</div>
 		  </div>
