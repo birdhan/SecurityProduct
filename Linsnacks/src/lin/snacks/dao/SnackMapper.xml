@@ -33,4 +33,11 @@
 	
 	</delete>
 	
+	<select id="findsnackByType1" resultType="lin.snacks.pojo.Snack" parameterType="String">
+	<!-- SELECT * FROM snack a WHERE a.type=#{value} -->
+	SELECT * FROM snack a WHERE a.type=#{type}
+	</select>
+	
+	
+	
 </mapper>

@@ -20,4 +20,7 @@ public interface SnackService {
 	public List<Snack> findSnacksByHAll();
 	
 	public void deletesnackById(String id);
+	
+	public List<Snack> findsnackByType1(String type);
+	
 }

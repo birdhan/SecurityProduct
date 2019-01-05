@@ -3752,7 +3752,7 @@ textarea.form-control {
         font-size: 10px;
         font-weight: 500;
         color: #5b5b5b;
-        visibility: hidden;
+       /*  visibility: hidden; */
         opacity: 0;
         -webkit-transition: all 0.4s ease;
         -moz-transition: all 0.4s ease;

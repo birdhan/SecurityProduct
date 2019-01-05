@@ -21,4 +21,6 @@ public interface SnackMapper {
 	
 	public void deletesnackById(String id);
 	
+	public List<Snack> findsnackByType1(String type);
+	
 }

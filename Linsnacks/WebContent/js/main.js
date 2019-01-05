@@ -251,7 +251,7 @@
                     itemSelector: '.grid-item'
                 });
             });
-            var filters = masonryTrigger.closest('.masonry-root').find('.ps-masonry__filter > li > a');
+         /*   var filters = masonryTrigger.closest('.masonry-root').find('.ps-masonry__filter > li > a');
             filters.on('click', function() {
                 var selector = $(this).attr('data-filter');
                 filters.find('a').removeClass('current');
@@ -266,7 +266,7 @@
                     filter: selector
                 });
                 return false;
-            });
+            });*/
         }
     }
 

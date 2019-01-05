@@ -20,7 +20,7 @@
 		  <div class="ps-product__thumbnail">
 			<!-- 图片位置两个 -->
 			<div class="ps-product__image">
-			  <div class="item"><img class="zoom" src="${pageContext.request.contextPath }/images/11111111.jpg" alt="" data-zoom-image="${pageContext.request.contextPath }/images/11111111.jpg"></div>
+			  <div class="item"><img class="zoom" src="http://localhost:80/pic/${snack.picture}" alt="" data-zoom-image="http://localhost:80/pic/${snack.picture}"></div>
 			 <!--  <div class="item"><img class="zoom" src="images/shoe-detail/2.jpg" alt="" data-zoom-image="images/shoe-detail/2.jpg"></div>
 			  <div class="item"><img class="zoom" src="images/shoe-detail/3.jpg" alt="" data-zoom-image="images/shoe-detail/3.jpg"></div> -->
 			</div>

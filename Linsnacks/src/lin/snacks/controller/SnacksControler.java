@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -156,7 +157,7 @@ public class SnacksControler {
 		if (fileStr!=null) {
 			/*String newfileName = UUID.randomUUID().toString() + fileStr.substring(fileStr.lastIndexOf("."));*/
 			String newfileName = UUID.randomUUID().toString()+".jpg";
-			imageFile.transferTo(new File("D:\\img1\\" + newfileName));
+			imageFile.transferTo(new File("D:\\img\\" + newfileName));
 			snack.setPicture(newfileName);
 		
 		}
@@ -165,13 +166,29 @@ public class SnacksControler {
 		snackService.insertsnack(snack);
 		return "redirect:/adminis";
 	}
-	
+	/**
+	 * 后台根据id删除商品
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("/deletesnackById")
 	public String deletesnackById(String id) {
 		snackService.deletesnackById(id);
 		return "redirect:/adminis";
 	}
 	
+	/**
+	 * 零食类型查询
+	 * @param model
+	 * @param type
+	 * @return
+	 */
+	@RequestMapping("/findsnackByType")
+	public String findsnackByType(Model model,String type) {
+		List<Snack> list = snackService.findsnackByType1(type);
+		model.addAttribute("list", list);
+		return "index";
+	}
 	
 
 }

@@ -30,7 +30,7 @@
 			<div class="grid-item nike">
 			  <div class="grid-item__content-wrapper">
 				<div class="ps-shoe mb-30">
-				  <div class="ps-shoe__thumbnail"><img src="${pageContext.request.contextPath }/images/11111111.jpg" alt=""><a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a>
+				  <div class="ps-shoe__thumbnail"><img src="http://localhost:80/pic/${list.picture}" alt=""><%-- <a class="ps-shoe__overlay" href="${pageContext.request.contextPath }/details"></a> --%>
 				  </div>
 				  <div class="ps-shoe__content">
 					<div class="ps-shoe__variants">

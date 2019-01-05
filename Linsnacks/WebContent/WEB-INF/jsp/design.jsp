@@ -30,7 +30,7 @@
 											href="${pageContext.request.contextPath }/designdetails?id=${list.id}">加入设计交流</a></span>
 										</div>
 										<img
-											src="${pageContext.request.contextPath }/images/11111111.jpg"
+											src="http://localhost:80/pic/${list.picture}"
 											alt=""><a class="ps-shoe__overlay"
 											href="${pageContext.request.contextPath }/details"></a>
 

@@ -130,7 +130,7 @@ $(function () {
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
 					<label style="width: 45px;">点击热度</label><input type="text" value="0" name="chickrate"> 
-					<label style="width: 45px;">商品类型</label><select style="width: 160px;" name="type"><option value="">西式</option><option>糖果</option><option>糖果</option><option>坚果</option><option>膨化</option><option>素肉</option></select>
+					<label style="width: 45px;">商品类型</label><select style="width: 160px;" name="type"><option value="xs">西式</option><option value="tg">糖果</option><option value="yp">饮品</option><option value="jg">坚果</option><option value="ph">膨化</option><option value="sr">素肉</option></select>
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
 					<label style="width: 45px;">上线数量</label><input type="text" name="upsize">

@@ -53,8 +53,11 @@ private SnackMapper snackMapper;
 		// TODO Auto-generated method stub
 		snackMapper.deletesnackById(id);
 	}
-	
-	
-	
+	@Override
+	public List<Snack> findsnackByType1(String type) {
+		// TODO Auto-generated method stub
+		List<Snack> findsnackByType1 = snackMapper.findsnackByType1(type);
+		return findsnackByType1;
+	}
 
 }
