@@ -2,6 +2,8 @@ package lin.snacks.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -110,13 +112,14 @@ public class SnacksAdmin {
 	public String adminis1(Snack snack, MultipartFile imageFile) throws IllegalStateException, IOException {
 		String fileStr = imageFile.getOriginalFilename();
 		if (fileStr!=null) {
-			/*String newfileName = UUID.randomUUID().toString() + fileStr.substring(fileStr.lastIndexOf("."));*/
 			String newfileName = UUID.randomUUID().toString()+".jpg";
 			imageFile.transferTo(new File("D:\\img\\" + newfileName));
 			snack.setPicture(newfileName);
 		
 		}
 		snack.setId(UUID.randomUUID().toString());
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		snack.setUptime(df.format(new Date()));
 		System.out.println(snack);
 		snackService.insertsnack(snack);
 		return "redirect:/adminis";

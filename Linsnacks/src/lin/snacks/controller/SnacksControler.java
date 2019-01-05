@@ -108,6 +108,7 @@ public class SnacksControler {
 	@RequestMapping("/details")
 	public String details(String id, Model model) {
 		Snack snack = snackService.findSnackById(id);
+		snackService.chickrateaddone(id);
 		model.addAttribute("snack", snack);
 		return "index_detail";
 	}
@@ -135,6 +136,7 @@ public class SnacksControler {
 	@RequestMapping("/designdetails")
 	public String designdetails(String id, Model model) {
 		Snack snack = snackService.findSnackById(id);
+		snackService.chickrateaddone(id);
 		model.addAttribute("snack", snack);
 		return "design_detail";
 	}
@@ -161,6 +163,7 @@ public class SnacksControler {
 	@RequestMapping("/upindexdetails")
 	public String upindexdetails(String id, Model model) {
 		Snack snack = snackService.findSnackById(id);
+		snackService.chickrateaddone(id);
 		model.addAttribute("snack", snack);
 		return "upindex_detail";
 	}

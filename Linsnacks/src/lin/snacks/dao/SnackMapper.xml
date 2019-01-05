@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="lin.snacks.dao.SnackMapper">
 	<select id="findSnackByAll" resultType="lin.snacks.pojo.Snack">
-		SELECT * FROM snack a WHERE a.status='order'
+		SELECT * FROM snack a WHERE a.status='order' ORDER BY a.chickrate DESC
 	</select>
 	<select id="findSnackById" parameterType="java.lang.String" resultType="lin.snacks.pojo.Snack">
 	SELECT * FROM snack a WHERE a.id=#{id}
 	</select>
 
 	<select id="findSnackByDesign" resultType="lin.snacks.pojo.Snack">
-		SELECT * FROM snack a WHERE a.status='design'
+		SELECT * FROM snack a WHERE a.status='design' ORDER BY a.chickrate DESC
 	</select>
 
 	<select id="findSnackByOnline" resultType="lin.snacks.pojo.Snack">
-	SELECT * FROM snack a WHERE a.status='online'
+	SELECT * FROM snack a WHERE a.status='online' ORDER BY a.chickrate DESC
 	</select>
 	
 	<select id="findSnackByAdvanced">
@@ -38,6 +38,9 @@
 	SELECT * FROM snack a WHERE a.type=#{type}
 	</select>
 	
+	<update id="chickrateaddone" parameterType="java.lang.String">
+	UPDATE snack SET snack.chickrate=snack.chickrate+1 WHERE id=#{id}
+	</update>
 	
 	
 </mapper>

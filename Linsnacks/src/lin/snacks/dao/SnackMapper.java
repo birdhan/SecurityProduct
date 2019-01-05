@@ -23,4 +23,6 @@ public interface SnackMapper {
 	
 	public List<Snack> findsnackByType1(String type);
 	
+	public void chickrateaddone(String id);
+	
 }

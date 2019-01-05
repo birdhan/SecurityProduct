@@ -59,5 +59,10 @@ private SnackMapper snackMapper;
 		List<Snack> findsnackByType1 = snackMapper.findsnackByType1(type);
 		return findsnackByType1;
 	}
+	@Override
+	public void chickrateaddone(String id) {
+		// TODO Auto-generated method stub
+		snackMapper.chickrateaddone(id);
+	}
 
 }
