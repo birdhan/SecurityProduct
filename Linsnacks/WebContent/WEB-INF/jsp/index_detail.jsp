@@ -4,12 +4,18 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+
 <script type="text/javascript">
-function yuyue(hanhanhan){
+function yuyue(id,name){
 	
+if(confirm("您确定要预约"+name+"商品吗？")){
+	
+	//ajax
+	
+	alert("已添加预约");
 	
 }
-
+}
 </script>
 <main class="ps-main">
   <div class="test">
@@ -60,7 +66,7 @@ function yuyue(hanhanhan){
 				<input class="form-control" type="number" value="1">
 			  </div> -->
 			</div>
-			<div class="ps-product__shopping"><a class="ps-btn mb-10" style="cursor: pointer;" onclick="yuyue('${snack.id}')">加入预约<i class="ps-icon-next"></i></a>
+			<div class="ps-product__shopping"><a class="ps-btn mb-10 open-window" style="cursor: pointer;" onclick="yuyue('${snack.id}','${snack.name}')">加入预约<i class="ps-icon-next"></i></a>
 			  <!-- <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div> -->
 			</div>
 		  </div>
