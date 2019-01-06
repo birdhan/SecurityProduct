@@ -1,5 +1,11 @@
 package lin.snacks.dao;
 
-public interface UserMapper {
+import java.util.List;
 
+import lin.snacks.pojo.User;
+
+public interface UserMapper {
+	public void adduser(User user);
+
+	public List<User> selectuser(User user);
 }

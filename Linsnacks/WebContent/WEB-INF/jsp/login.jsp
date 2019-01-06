@@ -35,10 +35,10 @@ window.onload = function(){
 						<img src="${pageContext.request.contextPath }/img/user.png" alt=""/>
 					</div>
 				<form action="${actionurl }">
-						<input type="text" class="text" placeholder="用户名">
-						<input type="password" placeholder="password">
-						<input type="hidden" class="hidtext" id="hid1" placeholder="联系方式">
-						<input type="hidden" class="hidtext" id="hid2" placeholder="收货地址">
+						<input type="text" name="name" class="text" placeholder="用户名">
+						<input type="password" name="sex" placeholder="password">
+						<input type="hidden" name="tel" class="hidtext" id="hid1" placeholder="联系方式">
+						<input type="hidden" name="address" class="hidtext" id="hid2" placeholder="收货地址">
 						<div class="submit">
 							<input type="submit" value="${typesubmin }" >
 					</div>	

@@ -47,7 +47,8 @@ public class SnacksAdmin {
 		String actionurl="";
 		String url=request.getContextPath();
 
-		if(parameter.equals("管理员快速注册")) {
+		if(parameter.equals("快速注册")) {
+			parameter="注册管理员账号"; 
 			typesubmin="马上注册";
 			actionurl=url+"/registera";
 						

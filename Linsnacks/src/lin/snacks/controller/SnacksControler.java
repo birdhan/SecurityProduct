@@ -1,88 +1,108 @@
 package lin.snacks.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lin.snacks.pojo.Leave;
 import lin.snacks.pojo.Snack;
+import lin.snacks.pojo.User;
+import lin.snacks.service.LeaveService;
 import lin.snacks.service.SnackService;
+import lin.snacks.service.UserService;
 
 @Controller
 public class SnacksControler {
 	@Autowired
 	private SnackService snackService;
-	
-	
-	
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private LeaveService leaveService;
 
 	/**
 	 * 请求转发登录
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/userlogin")
 	public String userlogin() {
 		return "forward:/loginuser?value=login";
 	}
-	
-	
-	
+
 	/**
 	 * 用户登录与注册判断
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/loginuser")
 	public String loginuser(HttpServletRequest request) {
-		
-		String parameter = request.getParameter("value");
-		String typesubmin="";
-		String actionurl="";
-		String url=request.getContextPath();
-		String typehid="";
 
-		if(parameter.equals("快速注册")) {
-			typesubmin="马上注册";
-			actionurl=url+"/registeru";
-			typehid="0";
-						
-		}else {
-			parameter="用户登录";
-			typesubmin="确认登录";
-			actionurl=url+"/loginu";
+		String parameter = request.getParameter("value");
+		String typesubmin = "";
+		String actionurl = "";
+		String url = request.getContextPath();
+		String typehid = "";
+
+		if (parameter.equals("快速注册")) {
+			typesubmin = "马上注册";
+			actionurl = url + "/registeru";
+			typehid = "0";
+
+		} else {
+			parameter = "用户登录";
+			typesubmin = "确认登录";
+			actionurl = url + "/loginu";
 		}
 		request.setAttribute("value", parameter);
 		request.setAttribute("typesubmin", typesubmin);
 		request.setAttribute("actionurl", actionurl);
 		request.setAttribute("typehid", typehid);
-		
+
 		return "login";
 	}
-	
+
 	/**
 	 * 用户登录
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/loginu")
-	public String logina() {
-		
-		
-		
-		return "redirect:/index";
+	public String logina(User user, HttpSession session) {
+		String url = "error";
+		List<User> users = userService.selectuser(user);
+		if (users != null && users.size() != 0) {
+			session.setAttribute("user", users.get(0).getName());
+			session.setAttribute("user1", users.get(0).getId());
+		}
+		if (users.size() == 1) {
+			return "redirect:/index";
+		} else {
+			url = "redirect:/userlogin";
+		}
+		return url;
+
 	}
+
 	/**
 	 * 用户注册
 	 * 
 	 * @return
 	 */
 	@RequestMapping("/registeru")
-	public String redistera() {
-		
-		
-		return "redirect:/index";
+	public String redistera(User user) {
+		user.setId(UUID.randomUUID().toString());
+		userService.adduser(user);
+		return "redirect:/userlogin";
 	}
 
 	/**
@@ -138,6 +158,8 @@ public class SnacksControler {
 		Snack snack = snackService.findSnackById(id);
 		snackService.chickrateaddone(id);
 		model.addAttribute("snack", snack);
+		List<Leave> leavelist = leaveService.findleaveBySid(id);
+		model.addAttribute("leavelist", leavelist);
 		return "design_detail";
 	}
 
@@ -191,24 +213,34 @@ public class SnacksControler {
 
 		return "personal4";
 	}
-	
-	
-	
-	
-	
+
 	/**
 	 * 零食类型查询
+	 * 
 	 * @param model
 	 * @param type
 	 * @return
 	 */
 	@RequestMapping("/findsnackByType")
-	public String findsnackByType(Model model,String type) {
+	public String findsnackByType(Model model, String type) {
 		List<Snack> list = snackService.findsnackByType1(type);
 		model.addAttribute("list", list);
 		return "index";
 	}
-	
-	
+
+	@RequestMapping("/addleave")
+	public String addleave(Leave leave, HttpSession session, HttpServletRequest request, Snack snack) {
+		leave.setId(UUID.randomUUID().toString());
+		leave.setStatus("design");
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		leave.setLtime(df.format(new Date()));
+		String user1 = session.getAttribute("user").toString();
+		String id1 = session.getAttribute("user1").toString();
+		leave.setUid(id1);
+		leave.setUname(user1);
+		leave.setSnacksid(snack.getId());
+		leaveService.addleave(leave);
+		return "forward:/designdetails";
+	}
 
 }

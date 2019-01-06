@@ -42,5 +42,4 @@
 	UPDATE snack SET snack.chickrate=snack.chickrate+1 WHERE id=#{id}
 	</update>
 	
-	
 </mapper>

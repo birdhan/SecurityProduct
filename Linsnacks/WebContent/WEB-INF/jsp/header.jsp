@@ -56,11 +56,11 @@
 			  <p>小琳零食预订平台欢迎您的光临，如果您有什么问题可以发邮件到123456789@gmail.com</p>
 			</div>
 			<div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
-			  <div class="header__actions"><a href="#">登录&注册</a>
+			  <div class="header__actions"><a href="${pageContext.request.contextPath }/userlogin">登录&注册</a>
 				<div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">当前用户</a>
 				 
 				</div>
-				<div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">韩春阳</a>
+				<div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${user}</a>
 				  
 				</div>
 			  </div>

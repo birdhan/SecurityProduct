@@ -2,4 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="lin.snacks.dao.LeaveMapper">
 
+<insert id="addleave" parameterType="lin.snacks.pojo.Leave">
+
+INSERT INTO `leave`(id,snacksid,uid,uname,message,status,ltime)
+VALUES(#{id},#{snacksid},#{uid},#{uname},#{message},#{status},#{ltime})
+
+</insert>
+
+<select id="findleaveBySid" parameterType="java.lang.String" resultType="lin.snacks.pojo.Leave">
+SELECT * FROM `leave` a WHERE a.snacksid=#{snacksid} AND a.STATUS='design'
+</select>
+
 </mapper>

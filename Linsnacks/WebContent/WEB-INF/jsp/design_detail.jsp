@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <jsp:include page="header.jsp"></jsp:include>
@@ -35,7 +36,7 @@
 						<div class="ps-product__rating"
 							style="border-bottom: 2px solid #00afc7; height: 20px; border-top: 2px solid #00afc7;">
 						</div>
-						<h1>韩春阳 | 前来参与 |</h1>
+						<h1>${user} | 前来参与 |</h1>
 						<h4>${snack.name}的设计与交流</h4>
 						<h3 class="ps-product__price">
 							设计价格：
@@ -98,7 +99,7 @@
 							</p>
 							
 							<!-- 留言信息列表循环 -->
-							
+							<c:forEach items="${leavelist}" var="list">
 							<div class="ps-review">
 								<div class="ps-review__thumbnail">
 									<img src="images/user/1.jpg" alt="找不到">
@@ -112,54 +113,31 @@
 										<option value="5">5</option>
 									</select>
 									<p>
-										来自<a href=""> 韩春阳</a>&nbsp;的宝贵意见 - 2015-30-52
+										来自<a href="">${list.uname}</a>&nbsp;的宝贵意见 - ${list.ltime}
 									</p>
 									</header>
-									<p>你这个太贵了，图标太low，建议用天线宝宝。你这个太贵了，图标太low，建议用天线宝宝。
-									你这个太贵了，图标太low，建议用天线宝宝。你这个太贵了，图标太low，建议用天线宝宝。
-									你这个太贵了，图标太low，建议用天线宝宝。
-									你这个太贵了，图标太low，建议用天线宝宝。你这个太贵了，图标太low，建议用天线宝宝。</p>
+									<p>${list.message}</p>
 								</div>
 							</div>
-							
-							
-							<div class="ps-review">
-								<div class="ps-review__thumbnail">
-									<img src="images/user/1.jpg" alt="找不到">
-								</div>
-								<div class="ps-review__content">
-									<header> <select class="ps-rating">
-										<option value="1">1</option>
-										<option value="1">2</option>
-										<option value="1">3</option>
-										<option value="1">4</option>
-										<option value="5">5</option>
-									</select>
-									<p>
-										来自<a href=""> 韩春阳</a>&nbsp;的宝贵意见 - 2015-30-52
-									</p>
-									</header>
-									<p>你这个太贵了，图标太low，建议用天线宝宝。你这个太贵了，图标太low，建议用天线宝宝。
-									你这个太贵了，图标太low，建议用天线宝宝。你这个太贵了，图标太low，建议用天线宝宝。
-									你这个太贵了，图标太low，建议用天线宝宝。
-									你这个太贵了，图标太low，建议用天线宝宝。你这个太贵了，图标太low，建议用天线宝宝。</p>
-								</div>
-							</div>
+							</c:forEach>
 							
 							
 							
 							
-							<form class="ps-product__review" action="_action" method="post">
+							
+							
+							<form class="ps-product__review" action="${pageContext.request.contextPath }/addleave" method="post">
 								
 								<div class="row">
 									
 									<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
 										<div class="form-group">
-											<label>By:<a href=""> 韩春阳</a></label>
-											<textarea class="form-control" rows="6" name=""></textarea>
+											<label>By:<a href="">${user}</a></label>
+											<input type="hidden" name="id" value="${snack.id}">
+											<textarea class="form-control" rows="6" name="message"></textarea>
 										</div>
 										<div class="form-group">
-											<button class="ps-btn ps-btn--sm">
+											<button class="ps-btn ps-btn--sm" type="submit">
 												Submit<i class="ps-icon-next"></i>
 											</button>
 										</div>

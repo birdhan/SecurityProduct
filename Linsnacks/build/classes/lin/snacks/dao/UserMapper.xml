@@ -2,4 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="lin.snacks.dao.UserMapper">
 
+<insert id="adduser" parameterType="lin.snacks.pojo.User">
+	INSERT INTO user (id,name,sex,tel,address)
+	VALUES(#{id},#{name},#{sex},#{tel},#{address})
+</insert>
+
+<select id="selectuser" parameterType="lin.snacks.pojo.User" resultType="lin.snacks.pojo.User">
+SELECT * FROM user a WHERE a.name=#{name} AND a.sex=#{sex}
+</select>
+
 </mapper>
