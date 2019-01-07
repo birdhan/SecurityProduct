@@ -119,6 +119,7 @@ public class SnacksAdmin {
 		
 		}
 		snack.setId(UUID.randomUUID().toString());
+		snack.setInventory(snack.getUpsize());
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		snack.setUptime(df.format(new Date()));
 		System.out.println(snack);

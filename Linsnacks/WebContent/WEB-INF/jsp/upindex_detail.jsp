@@ -4,6 +4,45 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+
+<script type="text/javascript">
+function yuyue(id,name,price,pic){
+	/* var mytan=window.open("${pageContext.request.contextPath}/tan.html","han","width=300,height=200,top=200,left=500,location=0");
+	mytan.document.write("") */
+	var nu=$("#number002").val();
+	var sta="unpaid";
+if(confirm("您确定要将"+nu+"个"+name+"加入购物车吗？")){
+	
+	
+	var user = {
+			sid:id,
+            sname:name,
+            spic:price,
+            owd:pic,
+            number:nu,
+            ostatus:sta	
+            
+        };
+	//ajax
+	$.ajax({
+            //几个参数需要注意一下
+                type: "POST",//方法类型
+                dataType: "json",//预期服务器返回的数据类型
+                url: "/Linsnacks/yuyue" ,//url
+                data: user,
+                success: function (success) {
+                   alert("添加成功");
+                },
+                error : function() {
+                    alert("添加失败");
+                }
+            });
+	
+	
+	
+} 
+}
+</script>
 <main class="ps-main">
   <div class="test">
 	<div class="container">
@@ -53,10 +92,10 @@
 			  </div> -->
 			</div>
 			<div class="form-group">
-				<input class="form-control" type="number" value="1">
+				<input class="form-control" type="number" value="1" id="number002">
 			  </div>
 			<div class="ps-product__shopping"><a class="ps-btn mb-10" href="cart.html">	直接购买<i class="ps-icon-next"></i></a>
-			   <a href="whishlist.html">&nbsp;&nbsp;加入购物车</a> 
+			   <a style="cursor: pointer;" onclick="yuyue('${snack.id}','${snack.name}','${snack.price}','${snack.picture}')">&nbsp;&nbsp;加入购物车</a> 
 			</div>
 			
 		  </div>

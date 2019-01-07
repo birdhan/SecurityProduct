@@ -58,17 +58,17 @@ function typeone(haha){
 												<div>
 													<a href="${pageContext.request.contextPath }/details?id=${list.id}"><button class="btn btn-success">详情</button></a>
 													&nbsp;
-													<button class="btn btn-success">预约</button>
+													<a href="${pageContext.request.contextPath }/details?id=${list.id}"><button class="btn btn-success">预约</button></a>
 												</div>
 												<div class="ps-shoe__detail">
 													<a class="ps-shoe__name" href="#">上线时间：${list.uptime}</a>
 													<p class="ps-shoe__categories">
-														<a href="#">预约数量：${list.inventory}</a>
+														<a href="#">预约数量：${list.upsize}</a>
 													</p>
 												</div>
 											</div>
 											<div class="ps-shoe__detail">
-												<a class="ps-shoe__name" href="#">我的名字是${list.name}</a>
+												<a class="ps-shoe__name" href="#">${list.name}</a>
 												<p class="ps-shoe__categories">
 													<a href="#">${list.special}</a>
 												</p>
