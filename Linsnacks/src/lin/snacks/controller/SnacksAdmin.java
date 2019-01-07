@@ -75,7 +75,7 @@ public class SnacksAdmin {
 		
 		
 		return "adminis/index";
-	}
+	} 
 	/**
 	 * 管理员注册
 	 * 
