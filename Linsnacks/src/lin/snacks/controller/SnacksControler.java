@@ -236,7 +236,14 @@ public class SnacksControler {
 		model.addAttribute("list", list);
 		return "index";
 	}
-
+    /**
+     * 添加留言
+     * @param leave
+     * @param session
+     * @param request
+     * @param snack
+     * @return
+     */
 	@RequestMapping("/addleave")
 	public String addleave(Leave leave, HttpSession session, HttpServletRequest request, Snack snack) {
 		leave.setId(UUID.randomUUID().toString());
