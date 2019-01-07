@@ -4,6 +4,15 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+<script type="text/javascript">
+function shouhuo(){
+	if(confirm("你确定以收到货物了吗？")){
+		//执行controller 修改订单表属性
+	}
+	
+}
+
+</script>
 <main class="ps-main">
   <div class="ps-products-wrap pt-80 pb-80">
 	<div class="ps-products" data-mh="product-listing">
@@ -16,7 +25,8 @@
 		<div style="margin: 5px; float: left;"><img alt="" src="${pageContext.request.contextPath }/images/11111111.jpg" width="140px" height="136px">
 		</div>
 		<div style="width: 20%; height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h4 style="line-height: 60px;">商品名称：旺旺小小酥</h4></p>
+		<p><h4 style="margin-top: 5px;">商品名称：</h4></p>
+		<p><h4 style="line-height: 40px;">旺旺小小酥</h4></p>
 		<p><h5>数量：1</h5></p>
 		</div>
 		<div style="width: 30%;  height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
@@ -27,7 +37,7 @@
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
 		<p><h5>单价：30</h5></p>
 		<p><h4>实际需支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;">确认收货</button></h4></p>
+		<p><h4><button class="btn btn-success" style="margin-right: 20px;" onclick="shouhuo()">确认收货</button></h4></p>
 		</div>
 		</div>
 	  </div>
@@ -115,7 +125,7 @@
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal2">待发货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal3">待收货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal4">待评价</a></li>
-			
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal5">预约中</a></li>
 			
 		  </ul>
 		</div>

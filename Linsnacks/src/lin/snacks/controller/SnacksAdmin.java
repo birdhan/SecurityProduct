@@ -78,8 +78,13 @@ public class SnacksAdmin {
 		String url = "error";
 		List<Admin> admins = adminService.selectadmin(admin);
 		
+
+		
+		
+	
+
 		if (admins.size() == 1) {
-			return "adminis/index";
+			return "redirect:/adminis";
 		} else {
 			url = "redirect:/adminlogin";
 		}
@@ -88,6 +93,7 @@ public class SnacksAdmin {
 	
 	
 	
+
 	/**
 	 * 管理员注册
 	 * 

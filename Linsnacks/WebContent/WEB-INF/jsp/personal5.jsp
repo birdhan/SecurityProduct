@@ -4,13 +4,6 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
-<script type="text/javascript">
-function pingjia(ping){
-	window.open ('${pageContext.request.contextPath}/tan.jsp?id='+ping, 'newwindow', 'height=200, width=300, top=200, left=400, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');
-	
-}
-
-</script>
 <main class="ps-main">
   <div class="ps-products-wrap pt-80 pb-80">
 	<div class="ps-products" data-mh="product-listing">
@@ -35,7 +28,7 @@ function pingjia(ping){
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
 		<p><h5>单价：30</h5></p>
 		<p><h4>实际需支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;" onclick="pingjia('han')">立即评价</button></h4></p>
+		<p><h4>当前状态：预约中等待商家下放商品。</h4></p>
 		</div>
 		</div>
 	  </div>
@@ -59,7 +52,7 @@ function pingjia(ping){
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
 		<p><h5>单价：30</h5></p>
 		<p><h4>实际需支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;">立即评价</button></h4></p>
+		<p><h4>当前状态：预约中等待商家下放商品。</p>
 		</div>
 		</div>
 	  </div>
@@ -82,7 +75,7 @@ function pingjia(ping){
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
 		<p><h5>单价：30</h5></p>
 		<p><h4>实际需支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;">立即评价</button></h4></p>
+		<p><h4>当前状态：预约中等待商家下放商品。</p>
 		</div>
 		</div>
 	  </div>
@@ -104,7 +97,7 @@ function pingjia(ping){
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
 		<p><h5>单价：30</h5></p>
 		<p><h4>实际需支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;">立即评价</button></h4></p>
+		<p><h4>当前状态：预约中等待商家下放商品。</p>
 		</div>
 		</div>
 	  </div>
@@ -124,7 +117,6 @@ function pingjia(ping){
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal3">待收货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal4">待评价</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal5">预约中</a></li>
-			
 			
 		  </ul>
 		</div>

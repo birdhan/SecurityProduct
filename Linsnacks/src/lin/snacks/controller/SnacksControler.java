@@ -222,6 +222,11 @@ public class SnacksControler {
 
 		return "personal4";
 	}
+	@RequestMapping("/personal5")
+	public String personal5() {
+
+		return "personal5";
+	}
 
 	/**
 	 * 零食类型查询
