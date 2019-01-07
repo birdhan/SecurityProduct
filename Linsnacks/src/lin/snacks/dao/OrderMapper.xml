@@ -2,10 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="lin.snacks.dao.OrderMapper">
 
-<insert id="addall" parameterType="lin.snacks.pojo.Order">
-
+    <insert id="addall" parameterType="lin.snacks.pojo.Order">
     insert into `order` values (#{id},#{uid},#{sid},#{sname},#{spic},#{ostatus},#{owd},#{onumber},#{uaddress},#{utel},#{uname},#{number},#{otime})
     </insert>
 
+
+    <select id="findorderByidAndostatus" parameterType="lin.snacks.pojo.Order" resultType="lin.snacks.pojo.Order">
+    SELECT * FROM `order` a WHERE a.id=#{id} AND a.ostatus=#{ostatus}
+    </select>
  
 </mapper>

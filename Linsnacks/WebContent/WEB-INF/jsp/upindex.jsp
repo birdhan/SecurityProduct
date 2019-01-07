@@ -9,9 +9,9 @@
 function typeone(haha){
 	if(haha=='all'){
 		
-		window.location.href="${pageContext.request.contextPath }/...."; //查询所有的
+		window.location.href="${pageContext.request.contextPath }/upindex"; //查询所有的
 	}else{
-		var str="${pageContext.request.contextPath }/。。。。。?type="+haha; //按类别查询的
+		var str="${pageContext.request.contextPath }/findsnackonline?type="+haha; //按类别查询的
 		
 		 window.location.href=str;   
 	}

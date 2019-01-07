@@ -42,4 +42,12 @@
 	UPDATE snack SET snack.chickrate=snack.chickrate+1 WHERE id=#{id}
 	</update>
 	
+	<update id="updateeone" parameterType="java.lang.String">
+	UPDATE snack a SET a.inventory=a.inventory-1 WHERE a.id=#{id}
+	</update>
+	
+	<select id="findonlineByType" parameterType="java.lang.String" resultType="lin.snacks.pojo.Snack">
+	SELECT * FROM snack a WHERE a.`status`='online' AND a.type=#{type} ORDER BY a.chickrate DESC
+	</select>
+	
 </mapper>
