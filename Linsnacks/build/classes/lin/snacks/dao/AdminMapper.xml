@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="lin.snacks.dao.AdminMapper">
+	
+	<insert id="addadmin" parameterType="lin.snacks.pojo.Admin">
+		INSERT INTO admin (id,name,pwd)
+		VALUES(#{id},#{name},#{pwd})
+	</insert>
+
+	<select id="selectadmin" parameterType="lin.snacks.pojo.Admin" resultType="lin.snacks.pojo.Admin">
+	
+	SELECT * FROM admin a WHERE a.`name`=#{name} AND a.pwd=#{pwd} 
+	</select>
 
 </mapper>

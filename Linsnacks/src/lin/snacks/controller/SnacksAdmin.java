@@ -14,7 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
+
+import lin.snacks.service.AdminService;
 import lin.snacks.service.SnackService;
+import lin.snacks.pojo.Admin;
 import lin.snacks.pojo.Snack;
 
 @Controller
@@ -22,7 +25,8 @@ public class SnacksAdmin {
 	
 	@Autowired
 	private SnackService snackService;
-	
+	@Autowired
+	private AdminService adminService;
 
 	/**
 	 * 请求转发登录
@@ -70,23 +74,30 @@ public class SnacksAdmin {
 	 * @return
 	 */
 	@RequestMapping("/logina")
-	public String logina() {
+	public String logina(Admin admin) {
+		String url = "error";
+		List<Admin> admins = adminService.selectadmin(admin);
 		
-		
-		
-		return "adminis/index";
+		if (admins.size() == 1) {
+			return "adminis/index";
+		} else {
+			url = "redirect:/adminlogin";
+		}
+		return url;
 	}
+	
+	
+	
 	/**
 	 * 管理员注册
 	 * 
 	 * @return
 	 */
 	@RequestMapping("/registera")
-	public String redistera() {
-		
-		
-		
-		return "adminis/index";
+	public String redistera(Admin admin) {
+		admin.setId(UUID.randomUUID().toString());
+		adminService.addadmin(admin);
+		return "redirect:/adminlogin";
 	}
 	
 	

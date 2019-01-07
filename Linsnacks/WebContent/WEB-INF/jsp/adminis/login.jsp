@@ -18,8 +18,8 @@
 						<img src="${pageContext.request.contextPath }/img/user.png" alt=""/>
 					</div>
 				<form action="${actionurl }">
-						<input type="text" class="text" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}" >
-						<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+						<input type="text" name="name" class="text" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}" >
+						<input type="password" name="pwd" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 						<div class="submit">
 							<input type="submit" value="${typesubmin }" >
 					</div>	
