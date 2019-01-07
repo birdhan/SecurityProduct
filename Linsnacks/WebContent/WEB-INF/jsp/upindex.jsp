@@ -5,6 +5,21 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+<script type="text/javascript">
+function typeone(haha){
+	if(haha=='all'){
+		
+		window.location.href="${pageContext.request.contextPath }/...."; //查询所有的
+	}else{
+		var str="${pageContext.request.contextPath }/。。。。。?type="+haha; //按类别查询的
+		
+		 window.location.href=str;   
+	}
+	
+}
+
+
+</script>
 <main class="ps-main">
   
   <div class="ps-section--features-product ps-section masonry-root">
@@ -12,13 +27,14 @@
 	  <div class="ps-section__header mb-50">
 		<h3 class="ps-section__title" data-mask="健康零食">- 美味共享</h3>
 		<ul class="ps-masonry__filter">
-		  <li class="current"><a href="#" data-filter="*">All <sup>8</sup></a></li>
-		  <li><a href="#" data-filter=".nike">Nike <sup>1</sup></a></li>
-		  <li><a href="#" data-filter=".adidas">Adidas <sup>1</sup></a></li>
-		  <li><a href="#" data-filter=".men">Men <sup>1</sup></a></li>
-		  <li><a href="#" data-filter=".women">Women <sup>1</sup></a></li>
-		  <li><a href="#" data-filter=".kids">Kids <sup>4</sup></a></li>
-		</ul>
+					<li class="current"><a><span style="cursor: pointer; " onclick="typeone('all')">全部 </span></a></li>
+					<li><a><span   style="cursor: pointer; " onclick="typeone('jg')">坚果 </span></a></li>
+					<li><a><span   style="cursor: pointer; " onclick="typeone('sr')">素肉 </span> </a></li>
+					<li><a><span   style="cursor: pointer; " onclick="typeone('xs')">西式</span> </a></li>
+					<li><a><span   style="cursor: pointer; " onclick="typeone('ph')">膨化</span></a></li>
+					<li><a><span   style="cursor: pointer; " onclick="typeone('tg')">糖果 </span> </a></li>
+					<li><a><span   style="cursor: pointer; " onclick="typeone('yp')">饮品 </span> </a></li>
+				</ul>
 	  </div>
 	  <div class="ps-section__content pb-50">
 		<div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">

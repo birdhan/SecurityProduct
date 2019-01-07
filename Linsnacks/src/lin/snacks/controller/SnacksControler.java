@@ -2,21 +2,27 @@ package lin.snacks.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lin.snacks.pojo.Leave;
+import lin.snacks.pojo.Order;
 import lin.snacks.pojo.Snack;
 import lin.snacks.pojo.User;
 import lin.snacks.service.LeaveService;
+import lin.snacks.service.OrderService;
 import lin.snacks.service.SnackService;
 import lin.snacks.service.UserService;
 
@@ -28,6 +34,8 @@ public class SnacksControler {
 	private UserService userService;
 	@Autowired
 	private LeaveService leaveService;
+	@Autowired
+	private OrderService orderservice;
 
 	/**
 	 * 请求转发登录
@@ -83,6 +91,7 @@ public class SnacksControler {
 		if (users != null && users.size() != 0) {
 			session.setAttribute("user", users.get(0).getName());
 			session.setAttribute("user1", users.get(0).getId());
+			session.setAttribute("user2", users.get(0));
 		}
 		if (users.size() == 1) {
 			return "redirect:/index";
@@ -249,5 +258,40 @@ public class SnacksControler {
 		leaveService.addleave(leave);
 		return "forward:/designdetails";
 	}
+	
+	
+	/**
+	 * ajax添加预约订单
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/yuyue")
+	@ResponseBody
+	public Map<String, Object> yuyue(HttpSession session,HttpServletRequest request,HttpServletResponse response,Order order) {
+		
+		User user = (User) session.getAttribute("user2");
+		
+		order.setId(UUID.randomUUID().toString());
+		order.setUid(user.getId());
+		order.setOstatus(request.getParameter("ostatus"));
+		order.setUaddress(user.getAddress());
+		order.setUtel(user.getTel());
+		order.setUname(user.getName());
+		order.setNumber(request.getParameter("number"));
+		order.setSname(request.getParameter("sname"));
+		order.setSid(request.getParameter("sid"));
+		order.setSpic(request.getParameter("spic"));
+		order.setOwd(request.getParameter("owd"));
+		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		order.setOtime((df.format(new Date())));
+		
+		orderservice.addall(order);
+		
+		Map<String,Object> resultMap =new HashMap<String, Object>();
+		resultMap.put("success", "成功");
+		return resultMap;
+	} 
+	
 
 }

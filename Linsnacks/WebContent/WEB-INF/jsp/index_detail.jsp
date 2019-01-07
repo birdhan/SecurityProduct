@@ -6,13 +6,34 @@
 <body>
 
 <script type="text/javascript">
-function yuyue(id,name){
-	
+function yuyue(id,name,price,pic){
+	var nu="1";
+	var sta="order";
 if(confirm("您确定要预约"+name+"商品吗？")){
-	
+	var user = {
+			sid:id,
+            sname:name,
+            spic:price,
+            owd:pic,
+            number:nu,
+            ostatus:sta
+        };
 	//ajax
+	$.ajax({
+            //几个参数需要注意一下
+                type: "POST",//方法类型
+                dataType: "json",//预期服务器返回的数据类型
+                url: "/Linsnacks/yuyue" ,//url
+                data: user,
+                success: function (success) {
+                   alert("添加成功");
+                },
+                error : function() {
+                    alert("添加失败");
+                }
+            });
 	
-	alert("已添加预约");
+	
 	
 }
 }
@@ -66,7 +87,7 @@ if(confirm("您确定要预约"+name+"商品吗？")){
 				<input class="form-control" type="number" value="1">
 			  </div> -->
 			</div>
-			<div class="ps-product__shopping"><a class="ps-btn mb-10 open-window" style="cursor: pointer;" onclick="yuyue('${snack.id}','${snack.name}')">加入预约<i class="ps-icon-next"></i></a>
+			<div class="ps-product__shopping"><a class="ps-btn mb-10 open-window" style="cursor: pointer;" onclick="yuyue('${snack.id}','${snack.name}','${snack.price}','${snack.picture}')">加入预约<i class="ps-icon-next"></i></a>
 			  <!-- <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div> -->
 			</div>
 		  </div>
