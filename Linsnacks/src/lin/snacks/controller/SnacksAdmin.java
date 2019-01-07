@@ -84,7 +84,7 @@ public class SnacksAdmin {
 	
 
 		if (admins.size() == 1) {
-			return "adminis/index";
+			return "redirect:/adminis";
 		} else {
 			url = "redirect:/adminlogin";
 		}
