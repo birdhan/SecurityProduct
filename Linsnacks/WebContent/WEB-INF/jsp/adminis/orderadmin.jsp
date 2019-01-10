@@ -48,35 +48,33 @@ ddaccordion.init({
 <div id="main_container">
 
 
-<!-- 修改商品信息弹窗开始 -->
-		<div class="denglu">
+<!-- 修改订单信息弹窗开始 -->
+		<div class="denglu" style="width: 300px;left: 50%;">
 			<div
 				style="width: 100%; height: 20px; background-color: #87CEEB; border-radius: 15px; padding-top: 4px;">
-				修改零食状态信息</div>
+				修改订单状态信息</div>
 			<div
-				style="width: 80%; height: 200px; background-color: #FFFAFA; margin-left: 10%; margin-top: 10px; border-radius: 5px;">
-				<form action="http://www.baidu.com/" style="margin-top: 20px;" id="form2" enctype="multipart/form-data" method="post">
-					<input id="idup1" type="hidden" name="id">
+				style="width: 80%; height: 200px; background-color: #FFFAFA; margin-left: 10%; margin-top: 10px; border-radius: 5px;padding-top: 5px;">
+				<form action="${pageContext.request.contextPath }/orderupdate" style="margin-top: 20px;" id="form2" enctype="multipart/form-data" method="post">
+					<input id="idup2" type="hidden" name="id">
 					
-					<div style="width: 92%;margin-left: 4%;margin-top: 32px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">商品名称</label><input id="name0" type="text" name="name" style="width: 160px;">
-					<label style="width: 45px;">商品描述</label><input id="describese" type="text" name="describese" style="width: 160px;">
+					<div style="width: 92%;margin-left: 4%;margin-top: 30px;border: 1px solid #87CEEB;height: 20px;">
+					<label style="width: 45px;">支付价格</label><input id="spic0" type="text" name="spic" style="width: 160px;">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">商品主题</label><input id="title0" type="text" name="title" style="width: 160px;">
-					<label style="width: 45px;">商品特点</label><input id="special" type="text" name="special" style="width: 160px;">
+					<label style="width: 45px;">用户姓名</label><input id="uname0" type="text" name="uname" style="width: 160px;">
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">设计师名</label><input id="designer" type="text" name="designer" style="width: 160px;"> 
-					<label style="width: 45px;">商品状态</label><select id="status0" style="width: 160px;" name="status"><option value="order">预约状态</option><option value="design">测试交流</option><option value="online">正式上线</option></select>
+					<label style="width: 45px;">运单号码</label><input id="onumber0" type="text" name="onumber" style="width: 160px;"> 
+					
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">点击热度</label><input id="chickrate" type="text" value="0" name="chickrate" style="width: 160px;"> 
-					<label style="width: 45px;">商品类型</label><select id="type0" style="width: 160px;" name="type"><option value="xs">西式</option><option value="tg">糖果</option><option value="yp">饮品</option><option value="jg">坚果</option><option value="ph">膨化</option><option value="sr">素肉</option></select>
+					<label style="width: 45px;">购买数量</label><input id="number0" type="text" value="0" name="number" style="width: 160px;"> 
+					
 					</div>
 					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">上线数量</label><input id="upsize" type="text" name="upsize" style="width: 160px;">
-					<label style="width: 45px;">商品价格</label><input id="price0" type="text" name="price" style="width: 160px;">
+					<label style="width: 45px;">订单状态</label><input id="ostatus0" type="text" name="ostatus" style="width: 160px;" disabled="disabled" />
+					
 					</div>
 					
 
@@ -88,59 +86,11 @@ ddaccordion.init({
 
 
 		</div>
-<!-- 修改商品信息弹窗结束 -->
-<!-- 添加商品信息弹窗开始-->
-		<div class="denglu1">
-			<div
-				style="width: 100%; height: 20px; background-color: #87CEEB; border-radius: 15px; padding-top: 4px;">
-				添加零食</div>
-			<div
-				style="width: 80%; height: 200px; background-color: #FFFAFA; margin-left: 10%; margin-top: 10px; border-radius: 5px;">
-				
-				
-				
-				
-				<form action="${pageContext.request.contextPath }/adminis1" style="margin-top: 20px;" id="form1" enctype="multipart/form-data" method="post">
-					
-					
-					<div style="width: 92%;margin-left: 4%;margin-top: 20px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">商品名称</label><input type="text" name="name" style="width: 160px;">
-					<label style="width: 45px;">商品描述</label><input type="text" name="describese" style="width: 160px;">
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">商品主题</label><input type="text" name="title" style="width: 160px;">
-					<label style="width: 45px;">商品特点</label><input type="text" name="special" style="width: 160px;">
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">设计师名</label><input type="text" name="designer" style="width: 160px;"> 
-					<label style="width: 45px;">商品状态</label><select style="width: 160px;" name="status"><option value="order">预约状态</option><option value="design">测试交流</option><option value="online">正式上线</option></select>
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">点击热度</label><input type="text" value="0" name="chickrate" style="width: 160px;"> 
-					<label style="width: 45px;">商品类型</label><select style="width: 160px;" name="type"><option value="xs">西式</option><option value="tg">糖果</option><option value="yp">饮品</option><option value="jg">坚果</option><option value="ph">膨化</option><option value="sr">素肉</option></select>
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">上线数量</label><input type="text" name="upsize" style="width: 160px;">
-					<label style="width: 45px;">商品价格</label><input type="text" name="price" style="width: 160px;">
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 50px;">
-					<div style="float: left;"><label style="width: 45px;">上传图片</label></div><div style="float: left;"><input type="file" id="imageFile" name="imageFile"
-           accept="image/jpeg"></div>
-					<img alt="" src="${pageContext.request.contextPath }/images/11111111.jpg" width="48px" height="48px" id="imangid" class="img-thumbnail">
-					</div>
+<!-- 修改订单信息弹窗结束 -->
 
-				</form>
-			</div>
-
-			<button onclick="submin1()">提交</button>
-			<button class="bbb1">取消</button>
-
-
-		</div>
-<!-- 添加商品信息弹窗结束 -->
 
    <script>
-        $(document).ready(function () {
+       /*  $(document).ready(function () {
             $("#imageFile").change(function () {
 
 
@@ -155,10 +105,11 @@ ddaccordion.init({
                 var imageFile = this.files[0];
                 fileReader.readAsDataURL(imageFile);
             });
-        })
+        }) */
 function delete1(shanid) {
-	if (confirm("确定删除这条记录？")) {
-		window.location.href = "${pageContext.request.contextPath }/deletesnackById?id="
+	if (confirm("用户订单请谨慎操作！！！")) {
+		
+		window.location.href = "${pageContext.request.contextPath }/orderdelete?id="
 				+ shanid;
 
 	} else {
@@ -225,17 +176,17 @@ function delete1(shanid) {
     
     <div class="right_content">            
         
-    <h2>商品管理列表</h2> 
+    <h2>用户订单管理</h2> 
                     
                     
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
     <thead>
     	<tr>
         	<!-- <th scope="col" class="rounded-company"></th> -->
-            <th scope="col" class="rounded">产品名称</th>
-            <th scope="col" class="rounded">类型</th>
+            <th scope="col" class="rounded">订单用户</th>
+            <th scope="col" class="rounded">商品</th>
             <th scope="col" class="rounded">价格</th>
-            <th scope="col" class="rounded">点击量</th>
+            <th scope="col" class="rounded">数量</th>
             <th scope="col" class="rounded">修改</th>
             
             <th scope="col" class="rounded-q4">删除</th>
@@ -243,19 +194,18 @@ function delete1(shanid) {
     </thead>
         
     <tbody>
-    	<c:forEach items="${list }" var="list">
+    	<c:forEach items="${listone }" var="abc">
     	<tr>
         	
-            <td>${list.name}</td>
-            <td>${list.type}</td>
-            <td>RMB ${list.price}</td>
-            <td>${list.chickrate}</td>
+            <td>${abc.uname }</td>
+            <td>${abc.sname }</td>
+            <td>RMB ${abc.spic }</td>
+            <td>${abc.number }</td> 
 
-            <td><a class="bbb" onclick="update1('${list.id}','${list.name}','${list.title}','${list.describese}','${list.special}','${list.designer}','${list.chickrate}','${list.upsize}','${list.type}','${list.status}','${list.price}')"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td> 
-            <td><a onclick="delete1('${list.id}')"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
+            <td><a class="bbb" onclick="update11('${abc.id}','${abc.spic }','${abc.uname }','${abc.onumber }','${abc.number }','${abc.ostatus }')"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td> 
+            <td><a onclick="delete1('${abc.id}')"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
         </tr>
-        </c:forEach>
-    	
+       </c:forEach>
         
       
        
@@ -266,7 +216,7 @@ function delete1(shanid) {
     </tbody>
 </table>
 
-	 <a class="bbb1 bt_green" style="cursor:pointer;"><span class="bt_green_lft"></span><strong>添加商品</strong><span class="bt_green_r"></span></a>
+	 <!-- <a class="bbb1 bt_green" style="cursor:pointer;"><span class="bt_green_lft"></span><strong>添加商品</strong><span class="bt_green_r"></span></a> -->
     
         <div class="pagination">
         <span class="disabled"><a>上一页</a> <a>下一页 </a></span>

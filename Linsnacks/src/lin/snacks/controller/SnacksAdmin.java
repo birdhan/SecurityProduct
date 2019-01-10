@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import lin.snacks.service.AdminService;
-import lin.snacks.service.SnackService;
 import lin.snacks.pojo.Admin;
+import lin.snacks.pojo.Leave;
+import lin.snacks.pojo.Order;
 import lin.snacks.pojo.Snack;
+import lin.snacks.pojo.User;
+import lin.snacks.service.AdminService;
+import lin.snacks.service.LeaveService;
+import lin.snacks.service.OrderService;
+import lin.snacks.service.SnackService;
+import lin.snacks.service.UserService;
 
 @Controller
 public class SnacksAdmin {
@@ -27,6 +34,12 @@ public class SnacksAdmin {
 	private SnackService snackService;
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private OrderService orderservice;
+	@Autowired
+	private LeaveService leaveservice;
+	@Autowired
+	private UserService userservice;
 
 	/**
 	 * 请求转发登录
@@ -155,6 +168,146 @@ public class SnacksAdmin {
 		model.addAttribute("list", list);
 		return "adminis/index";
 		
+	}
+	
+	
+	/**
+	 * 订单管理查询所有订单
+	 * @return
+	 */
+	@RequestMapping("/orderadmin")
+	public String orderadmin(HttpServletRequest request,HttpServletResponse response,Model model) {
+		List<Order> findAll001 = orderservice.findAll();
+		model.addAttribute("listone",findAll001);
+		return "adminis/orderadmin";
+	}
+	/**
+	 * 删除订单
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/orderdelete")
+	public String orderdelete(HttpServletRequest request,HttpServletResponse response,Model model) {
+		String idsa = (String) request.getParameter("id");
+		
+		orderservice.delete(idsa);
+		return "redirect:/orderadmin";
+	}
+	
+	/**
+	 * 修改订单
+	 * @param request
+	 * @param response
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/orderupdate")
+	public String orderupdate(HttpServletRequest request,HttpServletResponse response,Order order) {
+		orderservice.updateorder(order);
+		return "redirect:/orderadmin";
+	}
+	
+	
+	/**
+	 * 留言管理查询留言
+	 * @return
+	 */
+	@RequestMapping("/mesadmin")
+	public String mesadmin(HttpServletRequest request,Model model) {
+		List<Leave> findall = leaveservice.findall();
+		model.addAttribute("listtwo",findall);
+		return "adminis/liuyan";
+	}
+	/**
+	 * 删除留言
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/mesdeladmin")
+	public String mesdeladmin(HttpServletRequest request,Model model) {
+		String id=request.getParameter("id");
+		leaveservice.deletelee(id);
+		
+		return "redirect:/mesadmin";
+	}
+	/**
+	 * 投票管理
+	 * @return
+	 */
+	@RequestMapping("/pickadmin")
+	public String pickadmin() {
+		
+		return "";
+	}
+	/**
+	 * 用户管理获取所有用户
+	 * @return
+	 */
+	@RequestMapping("/useradmin")
+	public String useradmin(Model model) {
+		List<User> findAll = userservice.findAll();
+		model.addAttribute("listtwo3",findAll);
+		return "adminis/userset";
+	}
+	
+	
+	@RequestMapping("/userdelete")
+	public String userdelets(HttpServletRequest request,String id) {
+		
+		userservice.deleteuser(id);
+		return "redirect:/useradmin";
+	}
+	/**
+	 * 预约管理查询
+	 * @return
+	 */ 
+	@RequestMapping("/yuyueadmin")
+	public String yuyueadmin(HttpServletRequest request,Model model) {
+		String parameter0 = "order";
+		List<Order> findBystatu = orderservice.findBystatu(parameter0);
+		model.addAttribute("listone1",findBystatu);
+		return "adminis/yuyueadmin";
+	}
+	
+	/**
+	 * 预约成功修改
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/yuyueupadmin")
+	public String yuyueupadmin(HttpServletRequest request) {
+		String parameter0 = "unpaid";
+		String id=request.getParameter("id");
+		orderservice.updateByidst(id, parameter0);
+		
+		return "redirect:/yuyueadmin";
+	}
+	
+	/**
+	 * 删除预约
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/yuyuedeadmin")
+	public String yuyuedeadmin(HttpServletRequest request) {
+		
+		String id=request.getParameter("id");
+		orderservice.delete(id);
+		
+		return "redirect:/yuyueadmin";
+	}
+	/**
+	 * 单号管理
+	 * @return
+	 */
+	@RequestMapping("/numberradmin")
+	public String numberradmin() {
+		
+		return "";
 	}
 	
 }

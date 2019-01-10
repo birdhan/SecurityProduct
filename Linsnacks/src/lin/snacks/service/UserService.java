@@ -8,4 +8,8 @@ public interface UserService {
 	public void adduser(User user);
 	
 	public List<User> selectuser(User user);
+	
+	public List<User> findAll();
+	
+	public void deleteuser(String id);
 }
