@@ -64,5 +64,16 @@ private SnackMapper snackMapper;
 		// TODO Auto-generated method stub
 		snackMapper.chickrateaddone(id);
 	}
+	@Override
+	public void updateeone(String id) {
+		// TODO Auto-generated method stub
+		snackMapper.updateeone(id);
+	}
+	@Override
+	public List<Snack> findonlineByType(String type) {
+		// TODO Auto-generated method stub
+		List<Snack> byType = snackMapper.findonlineByType(type);
+		return byType;
+	}
 
 }

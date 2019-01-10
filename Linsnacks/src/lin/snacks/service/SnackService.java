@@ -25,4 +25,8 @@ public interface SnackService {
 	
 	public void chickrateaddone(String id);
 	
+	public void updateeone(String id);
+	
+	public List<Snack> findonlineByType(String type);
+	
 }

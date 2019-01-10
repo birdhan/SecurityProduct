@@ -1,3 +1,9 @@
+
+
+
+
+
+
 package lin.snacks.controller;
 
 import java.text.SimpleDateFormat;
@@ -290,13 +296,29 @@ public class SnacksControler {
 		
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		order.setOtime((df.format(new Date())));
-		
+		snackService.updateeone(request.getParameter("sid"));
 		orderservice.addall(order);
 		
 		Map<String,Object> resultMap =new HashMap<String, Object>();
 		resultMap.put("success", "成功");
 		return resultMap;
 	} 
-	
+	/**
+	 * 上线产品按类别查询
+	 * @param type
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/findsnackonline")
+	public String findsnackonline(String type,Model model) {
+		List<Snack> list = snackService.findonlineByType(type);
+		model.addAttribute("list", list);
+		return "upindex";
+	}
 
+	
+	
+	
+	
 }
+

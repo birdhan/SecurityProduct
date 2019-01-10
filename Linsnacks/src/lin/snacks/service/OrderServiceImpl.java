@@ -1,3 +1,4 @@
+
 package lin.snacks.service;
 
 import java.util.List;
@@ -15,6 +16,12 @@ public class OrderServiceImpl implements OrderService {
 	@Resource
 	private OrderMapper ordermapper;
 
+	@Override
+	public List<Order> findorderByidAndostatus(Order order) {
+		// TODO Auto-generated method stub
+		List<Order> byidAndostatus = ordermapper.findorderByidAndostatus(order);
+		return byidAndostatus;
+	}
 	
 	@Override
 	public void addall(Order order) {
@@ -55,3 +62,10 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 }
+
+
+
+	
+
+
+

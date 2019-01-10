@@ -1,3 +1,4 @@
+
 package lin.snacks.dao;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface OrderMapper {
 	public List<Order> findAll();
 	public void deleteorder(String id);
 	public void updateorder(Order order);
-	
+	public List<Order> findorderByidAndostatus(Order order);
 	/**
 	 * 根据状态查询所有
 	 * @param statuss
@@ -29,3 +30,12 @@ public interface OrderMapper {
 	
 	
 }
+
+
+
+	
+	
+	
+	
+
+

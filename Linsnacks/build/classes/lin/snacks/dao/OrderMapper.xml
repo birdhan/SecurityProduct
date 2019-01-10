@@ -7,6 +7,10 @@
 		insert into `order` values
 		(#{id},#{uid},#{sid},#{sname},#{spic},#{ostatus},#{owd},#{onumber},#{uaddress},#{utel},#{uname},#{number},#{otime})
 	</insert>
+	 <select id="findorderByidAndostatus" parameterType="lin.snacks.pojo.Order" resultType="lin.snacks.pojo.Order">
+    SELECT * FROM `order` a WHERE a.id=#{id} AND a.ostatus=#{ostatus}
+    </select>
+	
 	<select id="findAll" resultType="lin.snacks.pojo.Order">
 		SELECT * FROM `order`
 	</select>
@@ -28,4 +32,8 @@
 	</update>
 	
 
+
+
+
+   
 </mapper>

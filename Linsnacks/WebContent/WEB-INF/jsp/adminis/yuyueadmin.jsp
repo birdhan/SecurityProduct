@@ -56,7 +56,7 @@ ddaccordion.init({
 function delete10(shanid) {
 	if (confirm("确定删除用户预约")) {
 		
-		window.location.href = "${pageContext.request.contextPath }/orderdelete?id="
+		window.location.href = "${pageContext.request.contextPath }/yuyuedeadmin?id="
 				+ shanid;
 
 	} else {
