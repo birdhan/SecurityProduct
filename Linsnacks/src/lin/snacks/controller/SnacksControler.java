@@ -1,3 +1,9 @@
+
+
+
+
+
+
 package lin.snacks.controller;
 
 import java.text.SimpleDateFormat;
@@ -247,7 +253,7 @@ public class SnacksControler {
 	@RequestMapping("/addleave")
 	public String addleave(Leave leave, HttpSession session, HttpServletRequest request, Snack snack) {
 		leave.setId(UUID.randomUUID().toString());
-		leave.setStatus("design");
+		leave.setStatus("设计交流");
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		leave.setLtime(df.format(new Date()));
 		String user1 = session.getAttribute("user").toString();
@@ -344,3 +350,4 @@ public class SnacksControler {
 	
 	
 }
+

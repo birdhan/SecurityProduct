@@ -10,4 +10,8 @@ public interface LeaveService {
 	
 	public List<Leave> findleaveBySid(String snacksid);
 	
+	public List<Leave> findall();
+	
+	public void deletelee(String id);
+	
 }

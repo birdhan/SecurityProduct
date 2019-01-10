@@ -11,4 +11,14 @@
 SELECT * FROM user a WHERE a.name=#{name} AND a.sex=#{sex}
 </select>
 
+
+<select id="selectAll" resultType="lin.snacks.pojo.User">
+
+select * from user
+</select>
+
+<delete id="del" parameterType="java.lang.String">
+
+delete from user where id=#{value}
+</delete>
 </mapper>

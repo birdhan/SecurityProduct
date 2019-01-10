@@ -1,1 +1,8 @@
+/ApplicationContext-dao.xml
+/ApplicationContext-service.xml
+/ApplicationContext-trans.xml
+/SpringMvc.xml
+/SqlMapConfig.xml
+/db.properties
 /lin/
+/log4j.properties

@@ -23,5 +23,15 @@ public class LeaveServiceImpl implements LeaveService {
 		List<Leave> bySid = leaveMapper.findleaveBySid(snacksid);
 		return bySid;
 	}
+	@Override
+	public List<Leave> findall() {
+		
+		return leaveMapper.findByAll();
+	}
+	@Override
+	public void deletelee(String id) {
+		leaveMapper.deletele(id);
+		
+	}
 
 }

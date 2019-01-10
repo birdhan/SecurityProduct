@@ -23,5 +23,15 @@ private UserMapper userMappr;
 		List<User> selectuser = userMappr.selectuser(user);
 		return selectuser;
 	}
+	@Override
+	public List<User> findAll() {
+		// TODO Auto-generated method stub
+		return userMappr.selectAll();
+	}
+	@Override
+	public void deleteuser(String id) {
+		userMappr.del(id);
+		
+	}
 
 }

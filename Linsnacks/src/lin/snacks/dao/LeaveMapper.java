@@ -9,4 +9,9 @@ public interface LeaveMapper {
 	public void addleave(Leave leave);
 	
 	public List<Leave> findleaveBySid(String snacksid);
+	
+	public List<Leave> findByAll();
+	
+	public void deletele(String id);
+	
 }
