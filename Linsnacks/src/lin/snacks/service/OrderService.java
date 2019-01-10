@@ -8,5 +8,5 @@ public interface OrderService {
 
 	public void addall(Order order);
 	
-	public List<Order> findorderByidAndostatus(Order order);
+	public List<Order> findorderByidAndostatus(String uid,String ostatus);
 }

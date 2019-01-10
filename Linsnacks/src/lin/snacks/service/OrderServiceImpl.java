@@ -22,10 +22,16 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<Order> findorderByidAndostatus(Order order) {
+	public List<Order> findorderByidAndostatus(String uid, String ostatus) {
 		// TODO Auto-generated method stub
-		List<Order> byidAndostatus = ordermapper.findorderByidAndostatus(order);
+		List<Order> byidAndostatus = ordermapper.findorderByidAndostatus(uid, ostatus);
 		return byidAndostatus;
 	}
+
+	
+
+	
+
+	
 
 }

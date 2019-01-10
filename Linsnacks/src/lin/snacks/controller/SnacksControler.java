@@ -222,11 +222,6 @@ public class SnacksControler {
 
 		return "personal4";
 	}
-	@RequestMapping("/personal5")
-	public String personal5() {
-
-		return "personal5";
-	}
 
 	/**
 	 * 零食类型查询
@@ -311,7 +306,41 @@ public class SnacksControler {
 	}
 
 	
-	
+	@RequestMapping("/findorderByostatus")
+	public String findorderByostatus(Model model,HttpServletRequest request,HttpSession session,String ostatus,String uid,Order order) {
+		String uid1 =(String) session.getAttribute("user1");
+		List<Order> list = orderservice.findorderByidAndostatus(uid1,ostatus);
+		
+		model.addAttribute("list", list);
+		
+		if(ostatus.equals("order")) {
+			
+			return "personal5";
+		}
+		if(ostatus.equals("unpaid")) {
+			return "personal";
+		}
+		if(ostatus.equals("noship")) {
+			return "personal2";
+		}
+		if(ostatus.equals("unreceived")) {
+			return "personal3";
+		}
+		
+		if(ostatus.equals("unevaluation")) {
+			return "personal4";
+		}
+		
+		return ostatus;
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 	
 }

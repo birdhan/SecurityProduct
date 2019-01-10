@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <jsp:include page="header.jsp"></jsp:include>
@@ -11,96 +12,41 @@
 		
 		
 		<!-- 一次循环 -->
+	  <c:forEach items="${list}" var="list">
 	  <div class="ps-product-action" style="margin-top: 5px;">
 		<div class="" style="width: 100%; height: 150px; border: 2px solid black;">
 		<div style="margin: 5px; float: left;"><img alt="" src="${pageContext.request.contextPath }/images/11111111.jpg" width="140px" height="136px">
 		</div>
 		<div style="width: 20%; height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
 		<p><h4 style="margin-top: 5px;">商品名称：</h4></p>
-		<p><h4 style="line-height: 40px;">旺旺小小酥</h4></p>
-		<p><h5>数量：1</h5></p>
+		<p><h4 style="line-height: 40px;">${list.sname}</h4></p>
+		<p><h5>数量：${list.number}</h5></p>
 		</div>
 		<div style="width: 30%;  height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h5>下单时间：2015-20-12</h5></p>
-		<p><h5>运单号：201236547852</h5></p>
-		<p><h5>收货地址：北京市房山区大豆路不知道送去哪里</h5></p>
+		<p><h5>下单时间：${list.otime}</h5></p>
+		<p><h5>运单号：${list.onumber}</h5></p>
+		<p><h5>收货地址：${list.uaddress}</h5></p>
 		</div>
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：30</h5></p>
+		<p><h5>单价：${list.spic}</h5></p>
 		<p><h4>实际需支付：30</h4></p>
-		<p><h4>当前状态：预约中等待商家下放商品。</h4></p>
+		<p><h4>当前状态：预约中等待商家下放商品</h4></p>
+		
 		</div>
 		</div>
 	  </div>
+	  </c:forEach>
 	  
 	  
 	  
-	  
-	  <div class="ps-product-action" style="margin-top: 5px;">
-		<div class="" style="width: 100%; height: 150px; border: 2px solid black;">
-		<div style="margin: 5px; float: left;"><img alt="" src="${pageContext.request.contextPath }/images/11111111.jpg" width="140px" height="136px">
-		</div>
-		<div style="width: 20%; height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h4 style="line-height: 60px;">商品名称：旺旺小小酥</h4></p>
-		<p><h5>数量：1</h5></p>
-		</div>
-		<div style="width: 30%;  height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h5>下单时间：2015-20-12</h5></p>
-		<p><h5>运单号：201236547852</h5></p>
-		<p><h5>收货地址：北京市房山区大豆路不知道送去哪里</h5></p>
-		</div>
-		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：30</h5></p>
-		<p><h4>实际需支付：30</h4></p>
-		<p><h4>当前状态：预约中等待商家下放商品。</p>
-		</div>
-		</div>
-	  </div>
+	 
 	  
 	  
 	  
-	  <div class="ps-product-action" style="margin-top: 5px;">
-		<div class="" style="width: 100%; height: 150px; border: 2px solid black;">
-		<div style="margin: 5px; float: left;"><img alt="" src="${pageContext.request.contextPath }/images/11111111.jpg" width="140px" height="136px">
-		</div>
-		<div style="width: 20%; height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h4 style="line-height: 60px;">商品名称：旺旺小小酥</h4></p>
-		<p><h5>数量：1</h5></p>
-		</div>
-		<div style="width: 30%;  height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h5>下单时间：2015-20-12</h5></p>
-		<p><h5>运单号：201236547852</h5></p>
-		<p><h5>收货地址：北京市房山区大豆路不知道送去哪里</h5></p>
-		</div>
-		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：30</h5></p>
-		<p><h4>实际需支付：30</h4></p>
-		<p><h4>当前状态：预约中等待商家下放商品。</p>
-		</div>
-		</div>
-	  </div>
+
 	  
 	  
-	  <div class="ps-product-action" style="margin-top: 5px;">
-		<div class="" style="width: 100%; height: 150px; border: 2px solid black;">
-		<div style="margin: 5px; float: left;"><img alt="" src="${pageContext.request.contextPath }/images/11111111.jpg" width="140px" height="136px">
-		</div>
-		<div style="width: 20%; height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h4 style="line-height: 60px;">商品名称：旺旺小小酥</h4></p>
-		<p><h5>数量：1</h5></p>
-		</div>
-		<div style="width: 30%;  height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
-		<p><h5>下单时间：2015-20-12</h5></p>
-		<p><h5>运单号：201236547852</h5></p>
-		<p><h5>收货地址：北京市房山区大豆路不知道送去哪里</h5></p>
-		</div>
-		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：30</h5></p>
-		<p><h4>实际需支付：30</h4></p>
-		<p><h4>当前状态：预约中等待商家下放商品。</p>
-		</div>
-		</div>
-	  </div>
+	
 	   
 	  
 	
@@ -112,11 +58,11 @@
 		</div>
 		<div class="ps-widget__content">
 		  <ul class="ps-list" >
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal">待付款</a></li>
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal2">待发货</a></li>
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal3">待收货</a></li>
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal4">待评价</a></li>
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/personal5">预约中</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">待付款</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=noship">待发货</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unreceived">待收货</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unevaluation">待评价</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=order">预约中</a></li>
 			
 		  </ul>
 		</div>
