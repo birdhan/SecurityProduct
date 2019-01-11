@@ -29,4 +29,6 @@ public interface SnackMapper {
 	
 	public List<Snack> findonlineByType(String type);
 	
+	public void updatesnackById(Snack snack);
+	
 }
