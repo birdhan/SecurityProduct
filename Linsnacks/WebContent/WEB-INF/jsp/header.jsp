@@ -89,10 +89,10 @@
 			</ul>
 	  </div>
 	  <div class="navigation__column right">
-		<form class="ps-search--header" action="${pageContext.request.contextPath }/findSnackByAdvancedd" method="post">
+		<%-- <form class="ps-search--header" action="${pageContext.request.contextPath }/findSnackByAdvancedd" method="post">
 		  <input class="form-control" type="text" name="name" id="name" placeholder="Search Product…">
 		  <button type="submit"><i class="ps-icon-search"></i></button>
-		</form>
+		</form> --%>
 	
 		<div class="menu-toggle"><span></span></div>
 	  </div>
