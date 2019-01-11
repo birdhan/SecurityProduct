@@ -32,11 +32,7 @@ private SnackMapper snackMapper;
 		List<Snack> byOnline = snackMapper.findSnackByOnline();
 		return byOnline;
 	}
-	@Override
-	public List<Snack> findSnackByAdvanced() {
-		List<Snack> byAdvanced = snackMapper.findSnackByAdvanced();
-		return byAdvanced;
-	}
+	
 	@Override
 	public void insertsnack(Snack snack) {
 		snackMapper.insertsnack(snack);
@@ -74,6 +70,12 @@ private SnackMapper snackMapper;
 		// TODO Auto-generated method stub
 		List<Snack> byType = snackMapper.findonlineByType(type);
 		return byType;
+	}
+	@Override
+	public List<Snack> findSnackByAdvanced(String name) {
+		// TODO Auto-generated method stub
+		List<Snack> advanced = snackMapper.findSnackByAdvanced(name);
+		return advanced;
 	}
 
 }

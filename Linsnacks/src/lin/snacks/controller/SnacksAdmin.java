@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -87,15 +88,15 @@ public class SnacksAdmin {
 	 * @return
 	 */
 	@RequestMapping("/logina")
-	public String logina(Admin admin) {
+	public String logina(Admin admin,HttpSession session) {
 		String url = "error";
 		List<Admin> admins = adminService.selectadmin(admin);
+		if(admins !=null && admins.size() !=0) {
+			session.setAttribute("admin", admins.get(0));
+			session.setAttribute("admins", admins.get(0).getName());
+			session.setAttribute("adminss", admins.get(0).getId());
+		}
 		
-
-		
-		
-	
-
 		if (admins.size() == 1) {
 			return "redirect:/adminis";
 		} else {
@@ -150,6 +151,7 @@ public class SnacksAdmin {
 		}
 		snack.setId(UUID.randomUUID().toString());
 		snack.setInventory(snack.getUpsize());
+		System.out.println(snack.getUpsize());
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		snack.setUptime(df.format(new Date()));
 		System.out.println(snack);

@@ -175,7 +175,7 @@ function delete1(shanid) {
 		<div class="header">
     <div class="logo"><a><img src="${pageContext.request.contextPath}/images/logo001.jpg" alt="" title="" border="0" width="200px" height="60px" style="border-radius: 6px;"/></a></div>
     
-    <div class="right_header">管理员 &nbsp;韩春阳  | </div>
+    <div class="right_header">管理员 &nbsp;${admins}  | </div>
     
     <div id="clock_a"></div>
     </div>
