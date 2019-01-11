@@ -13,7 +13,7 @@ public interface SnackMapper {
 	
 	public List<Snack> findSnackByOnline();
     
-	public List<Snack> findSnackByAdvanced();
+	public List<Snack> findSnackByAdvanced(String name);
 	
 	public void insertsnack(Snack snack);
 	

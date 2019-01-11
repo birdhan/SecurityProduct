@@ -48,7 +48,7 @@
 						</div>
 						<div class="ps-product__block ps-product__style">
 							<h5>主设计师&nbsp;&nbsp;辅助设计师</h5>
-							<h4>${snack.designer}&nbsp;&nbsp;&nbsp;韩春阳</h4>
+							<h4>${snack.designer}&nbsp;&nbsp;&nbsp;${user}</h4>
 						</div>
 						<div class="ps-product__block ps-product__style">
 							<h5>点击量</h5>

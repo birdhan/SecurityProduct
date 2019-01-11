@@ -16,12 +16,17 @@
 	SELECT * FROM snack a WHERE a.status='online' ORDER BY a.chickrate DESC
 	</select>
 	
-	<select id="findSnackByAdvanced">
-	SELECT * FROM snack a WHERE a.name LIKE '%${name}%'	
+	<select id="findSnackByAdvanced" parameterType="java.lang.String" resultType="lin.snacks.pojo.Snack">
+	SELECT * FROM snack 
+	<where>
+	<if test="name !=null and name != ''">
+	 snack.name LIKE '%${name}%' ORDER BY snack.chickrate DESC
+	</if>
+	</where>
 	</select>
     
     <insert id="insertsnack" parameterType="lin.snacks.pojo.Snack">
-    insert into snack(id,name,title,describese,special,designer,picture,uptime,upsize,type,status,price,chickrate) values(#{id},#{name},#{title},#{describese},#{special},#{designer},#{picture},#{uptime},#{upsize},#{type},#{status},#{price},#{chickrate})
+    insert into snack(id,name,title,describese,special,designer,picture,uptime,upsize,type,status,price,chickrate,inventory) values(#{id},#{name},#{title},#{describese},#{special},#{designer},#{picture},#{uptime},#{upsize},#{type},#{status},#{price},#{chickrate},#{inventory})
     </insert>
 	
 	<select id="findSnacksByHAll" resultType="lin.snacks.pojo.Snack">

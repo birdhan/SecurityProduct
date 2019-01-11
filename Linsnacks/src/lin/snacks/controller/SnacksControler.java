@@ -1,9 +1,3 @@
-
-
-
-
-
-
 package lin.snacks.controller;
 
 import java.text.SimpleDateFormat;
@@ -17,10 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lin.snacks.pojo.Leave;
@@ -311,7 +307,16 @@ public class SnacksControler {
 		return "upindex";
 	}
 
-	
+	/**
+	 * 我的订单
+	 * @param model
+	 * @param request
+	 * @param session
+	 * @param ostatus
+	 * @param uid
+	 * @param order
+	 * @return
+	 */
 	@RequestMapping("/findorderByostatus")
 	public String findorderByostatus(Model model,HttpServletRequest request,HttpSession session,String ostatus,String uid,Order order) {
 		String uid1 =(String) session.getAttribute("user1");
@@ -340,12 +345,18 @@ public class SnacksControler {
 		return ostatus;
 		
 		
-		
-		
-		
-		
-		
-		
+	}
+	/**
+	 *根据商品名的关键字查询
+	 * @param name
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/findSnackByAdvancedd",method=RequestMethod.POST)
+	public String findSnackByAdvanced(@Param(value="name")String name,Model model) {
+		List<Snack> list = snackService.findSnackByAdvanced(name);
+		model.addAttribute("list", list);
+		return "index";
 	}
 	
 	
