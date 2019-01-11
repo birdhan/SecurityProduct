@@ -67,7 +67,7 @@ function delete10(shanid) {
 function successa(shanid) {
 	if (confirm("确定放货给此用户")) {
 		
-		window.location.href = "${pageContext.request.contextPath }/yuyuedeadmin?id="
+		window.location.href = "${pageContext.request.contextPath }/yuyueupadmin?id="
 				+ shanid;
 
 	} else {
