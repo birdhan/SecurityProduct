@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="lin.snacks.dao.VoteMapper">
+<insert id="insertvote" parameterType="lin.snacks.pojo.Vote">
+insert into vote values(#{id},#{snacksid},#{uid},#{uname},#{type},#{vtime})
+</insert>
+
+<select id="findByuid" resultType="lin.snacks.pojo.Vote">
+select * from vote where id=#{0} and snacksid=#{1}
+</select>
+
+<select id="findAll" resultType="lin.snacks.pojo.Vote">
+select * from vote
+
+</select>
+
+<delete id="deletevote" parameterType="java.lang.String">
+delete from vote where id=#{value}
+</delete>
 
 </mapper>

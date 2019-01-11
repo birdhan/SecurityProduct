@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <jsp:include page="header.jsp"></jsp:include>
@@ -21,8 +21,7 @@
 						<!-- 图片位置两个 -->
 						<div class="ps-product__image">
 							<div class="item">
-								<img class="zoom"
-									src="http://localhost:80/pic/${snack.picture}"
+								<img class="zoom" src="http://localhost:80/pic/${snack.picture}"
 									alt=""
 									data-zoom-image="http://localhost:80/pic/${snack.picture}">
 							</div>
@@ -36,7 +35,7 @@
 						<div class="ps-product__rating"
 							style="border-bottom: 2px solid #00afc7; height: 20px; border-top: 2px solid #00afc7;">
 						</div>
-						<h1>${user} | 前来参与 |</h1>
+						<h1>${user}|前来参与 |</h1>
 						<h4>${snack.name}的设计与交流</h4>
 						<h3 class="ps-product__price">
 							设计价格：
@@ -75,65 +74,66 @@
 					<div class="ps-product__content mt-50">
 						<ul class="tab-list" role="tablist">
 							<li class="active"><a href="#tab_01" aria-controls="tab_01"
-								role="tab" data-toggle="tab">零食详情</a></li>
+								role="tab" data-toggle="tab">商品详情</a></li>
+							<li><a href="#tab_02" aria-controls="tab_02" role="tab"
+								data-toggle="tab">设计交流</a></li>
+							<li><a href="#tab_03" aria-controls="tab_03" role="tab"
+								data-toggle="tab">互动投票</a></li>
 						</ul>
 					</div>
 					<div class="tab-content mb-60">
 						<div class="tab-pane active" role="tabpanel" id="tab_01">
 							<p>${snack.describese}</p>
 						</div>
-						
-						<div class="ps-product__content mt-50">
-						<ul class="tab-list" role="tablist">
-							<li class="active"><a href="#tab_01" aria-controls="tab_01"
-								role="tab" data-toggle="tab">设计交流社区</a></li>
-						</ul>
-					</div>
 
 
 
 
-						<div class="tab-pane active" role="tabpanel" id="tab_01">
+
+
+						<div class="tab-pane" role="tabpanel" id="tab_02">
 							<p class="mb-20">
-								 <strong>对于本商品上线前的设计交流社区</strong>
+								<strong>对于本商品上线前的设计交流社区</strong>
 							</p>
-							
+
 							<!-- 留言信息列表循环 -->
 							<c:forEach items="${leavelist}" var="list">
-							<div class="ps-review">
-								<div class="ps-review__thumbnail">
-									<img src="images/user/1.jpg" alt="找不到">
+								<div class="ps-review">
+									<div class="ps-review__thumbnail">
+										<img src="images/user/1.jpg" alt="找不到">
+									</div>
+									<div class="ps-review__content">
+										<header> <select class="ps-rating">
+											<option value="1">1</option>
+											<option value="1">2</option>
+											<option value="1">3</option>
+											<option value="1">4</option>
+											<option value="5">5</option>
+										</select>
+										<p>
+											来自<a href="">${list.uname}</a>&nbsp;的宝贵意见 - ${list.ltime}
+										</p>
+										</header>
+										<p>${list.message}</p>
+									</div>
 								</div>
-								<div class="ps-review__content">
-									<header> <select class="ps-rating">
-										<option value="1">1</option>
-										<option value="1">2</option>
-										<option value="1">3</option>
-										<option value="1">4</option>
-										<option value="5">5</option>
-									</select>
-									<p>
-										来自<a href="">${list.uname}</a>&nbsp;的宝贵意见 - ${list.ltime}
-									</p>
-									</header>
-									<p>${list.message}</p>
-								</div>
-							</div>
 							</c:forEach>
-							
-							
-							
-							
-							
-							
-							<form class="ps-product__review" action="${pageContext.request.contextPath }/addleave" method="post">
-								
+
+
+
+
+
+
+							<form class="ps-product__review"
+								action="${pageContext.request.contextPath }/addleave"
+								method="post">
+
 								<div class="row">
-									
+
 									<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 ">
 										<div class="form-group">
-											<label>By:<a href="">${user}</a></label>
-											<input type="hidden" name="id" value="${snack.id}">
+											<label>By:<a href="">${user}</a></label> <input type="hidden"
+												name="id" value="${snack.id}">
 											<textarea class="form-control" rows="6" name="message"></textarea>
 										</div>
 										<div class="form-group">
@@ -144,9 +144,91 @@
 									</div>
 								</div>
 							</form>
-							
-							
+
+
 						</div>
+
+
+						<!-- 互动投票 -->
+						<div class="tab-pane" role="tabpanel" id="tab_03">
+							<p class="mb-20">
+								<strong>对于商品的整体评价进行打分</strong>
+							</p>
+
+							<div style="width: 500px;">
+								<div id="bar-chart">
+									<div class="graph">
+										<ul class="x-axis">
+											
+											<li><span>20</span></li>
+											<li><span>40</span></li>
+											<li><span>60</span></li>
+											<li><span>80</span></li>
+											<li><span>100</span></li>
+										</ul>
+										<ul class="y-axis">
+											<li><span>100%</span></li>
+											<li><span>80%</span></li>
+											<li><span>60%</span></li>
+											<li><span>40%</span></li>
+											<li><span>20%</span></li>
+										</ul>
+										<div class="bars">
+											<div class="bar-group">
+												<div class="bar bar-2 stat-2" style="height: 0%;">
+													<span>3520</span>
+												</div>
+												
+											</div>
+
+											<div class="bar-group">
+												<div class="bar bar-5 stat-2" style="height: 76%;">
+													<span>6080</span>
+												</div>
+												
+											</div>
+
+											<div class="bar-group">
+												<div class="bar bar-8 stat-2" style="height: 78%;">
+													<span>6240</span>
+												</div>
+												
+											</div>
+
+											<div class="bar-group">
+												<div class="bar bar-11 stat-2" style="height: 44%;">
+													<span>3520</span>
+												</div>
+												
+											</div>
+
+											<div class="bar-group">
+												<div class="bar bar-14 stat-2" style="height: 28%;">
+													<span>2000</span>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<p class="mb-20">
+								<strong>请您为我们设计的产品打分，如果您有宝贵的意见与建议请参与设计与交流。</strong>
+							</p>
+							<button class="btn btn-success" style="margin-left: 100px;">20分</button>
+							<button class="btn btn-success">40分</button>
+							<button class="btn btn-success">60分</button>
+							<button class="btn btn-success">80分</button>
+							<button class="btn btn-success">100分</button>
+
+
+
+							
+
+						</div>
+
+
+
 
 
 
