@@ -22,11 +22,13 @@ import lin.snacks.pojo.Leave;
 import lin.snacks.pojo.Order;
 import lin.snacks.pojo.Snack;
 import lin.snacks.pojo.User;
+import lin.snacks.pojo.Vote;
 import lin.snacks.service.AdminService;
 import lin.snacks.service.LeaveService;
 import lin.snacks.service.OrderService;
 import lin.snacks.service.SnackService;
 import lin.snacks.service.UserService;
+import lin.snacks.service.VoteService;
 
 @Controller
 public class SnacksAdmin {
@@ -41,6 +43,8 @@ public class SnacksAdmin {
 	private LeaveService leaveservice;
 	@Autowired
 	private UserService userservice;
+	@Autowired
+	private VoteService voteservice;
 
 	/**
 	 * 请求转发登录
@@ -240,9 +244,19 @@ public class SnacksAdmin {
 	 * @return
 	 */
 	@RequestMapping("/pickadmin")
-	public String pickadmin() {
-		
-		return "";
+	public String pickadmin(Model model) {
+		List<Vote> findAll = voteservice.findAll();
+		model.addAttribute("findvote",findAll);
+		return "adminis/voteadmin";
+	}
+	/**
+	 * 删除票数
+	 * @return
+	 */
+	@RequestMapping("/pickdelete")
+	public String pickdelete(String id) {
+		voteservice.deletevote(id);
+	return "redirect:/pickadmin";
 	}
 	/**
 	 * 用户管理获取所有用户

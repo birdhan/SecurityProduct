@@ -13,4 +13,6 @@ public interface VoteMapper {
 	public List<Vote> findAll();
 	
 	public void deletevote(String id);
+	
+	public Integer findByid(String id,String typevote);
 }

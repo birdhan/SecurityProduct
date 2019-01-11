@@ -23,10 +23,12 @@ import lin.snacks.pojo.Leave;
 import lin.snacks.pojo.Order;
 import lin.snacks.pojo.Snack;
 import lin.snacks.pojo.User;
+import lin.snacks.pojo.Vote;
 import lin.snacks.service.LeaveService;
 import lin.snacks.service.OrderService;
 import lin.snacks.service.SnackService;
 import lin.snacks.service.UserService;
+import lin.snacks.service.VoteService;
 
 @Controller
 public class SnacksControler {
@@ -38,6 +40,8 @@ public class SnacksControler {
 	private LeaveService leaveService;
 	@Autowired
 	private OrderService orderservice;
+	@Autowired
+	private VoteService voteservice;
 
 	/**
 	 * 请求转发登录
@@ -165,12 +169,47 @@ public class SnacksControler {
 	 * @return
 	 */
 	@RequestMapping("/designdetails")
-	public String designdetails(String id, Model model) {
+	public String designdetails(String id, Model model,HttpSession session) {
 		Snack snack = snackService.findSnackById(id);
 		snackService.chickrateaddone(id);
 		model.addAttribute("snack", snack);
 		List<Leave> leavelist = leaveService.findleaveBySid(id);
 		model.addAttribute("leavelist", leavelist);
+		double findByid20 = voteservice.findByid(id, "20");
+		double findByid40 = voteservice.findByid(id, "40");
+		double findByid60 = voteservice.findByid(id, "60");
+		double findByid80 = voteservice.findByid(id, "80");
+		double findByid100 = voteservice.findByid(id, "100");
+		
+		double sum=findByid20+findByid40+findByid60+findByid80+findByid100;
+		
+		if(sum==0) {
+			model.addAttribute("find100","100");
+		}else {
+			double find20=findByid20/sum*100;
+		
+			model.addAttribute("find20",String.valueOf(find20));
+			
+			double find40=findByid40/sum*100;
+			model.addAttribute("find40",String.valueOf(find40));
+			double find60=findByid60/sum*100;
+			model.addAttribute("find60",String.valueOf(find60));
+			double find80=findByid80/sum*100;
+			model.addAttribute("find80",String.valueOf(find80));
+			double find100=findByid100/sum*100;
+			model.addAttribute("find100",String.valueOf(find100));
+			
+		}
+		
+		
+		
+		
+		/*for(int i=20;i<=100;i=i+20) {
+			
+			int findBy20=findBysum
+			model.addAllAttributes("20",findBy20);
+		}*/
+		
 		return "design_detail";
 	}
 
@@ -358,6 +397,37 @@ public class SnacksControler {
 		model.addAttribute("list", list);
 		return "index";
 	}
+	
+	
+	/**
+	 * ajax 添加投票信息
+	 * @param session
+	 * @param request
+	 * @param response
+	 * @param vote
+	 * @return
+	 */
+	@RequestMapping("/addvote")
+	@ResponseBody
+	public Map<String, Object> addvote(HttpSession session,HttpServletRequest request,HttpServletResponse response,Vote vote) {
+				
+		String parameter = request.getParameter("sid");
+		String parameter2 = request.getParameter("stype");
+		User user = (User) session.getAttribute("user2");
+		vote.setId(UUID.randomUUID().toString());
+		vote.setSnacksid(parameter);
+		vote.setUid(user.getId());
+		vote.setUname(user.getName());
+		vote.setType(parameter2);
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		vote.setVtime((df.format(new Date())));
+		voteservice.insertvote(vote);
+		Map<String,Object> resultMap =new HashMap<String, Object>();
+		resultMap.put("success", "成功");
+		return resultMap;
+	} 
+	
+	
 	
 	
 }

@@ -18,4 +18,10 @@ select * from vote
 delete from vote where id=#{value}
 </delete>
 
+<select id="findByid" resultType="java.lang.Integer">
+
+select count(type) from vote where snacksid=#{0} and type=#{1}
+
+</select>
+
 </mapper>

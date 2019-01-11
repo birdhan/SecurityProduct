@@ -38,4 +38,10 @@ public class VoteServiceImpl implements VoteService {
 		
 	}
 
+	@Override
+	public Integer findByid(String id, String typevote) {
+		// TODO Auto-generated method stub
+		return votemapper.findByid(id, typevote);
+	}
+
 }

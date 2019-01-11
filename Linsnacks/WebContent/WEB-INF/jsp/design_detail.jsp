@@ -5,6 +5,33 @@
 <html>
 <jsp:include page="header.jsp"></jsp:include>
 <body>
+
+<script type="text/javascript">
+function votebutton(sid,stype){
+	
+	var user = {
+			sid:sid,
+			stype:stype
+           
+        };
+	//ajax
+	$.ajax({
+            //几个参数需要注意一下
+                type: "POST",//方法类型
+                dataType: "json",//预期服务器返回的数据类型
+                url: "/Linsnacks/addvote" ,//url
+                data: user,
+                success: function (success) {
+                	confirm("感谢你的参与，小琳会更加努力！");
+                },
+                error : function() {
+                    alert("添加失败,请重新登录。");
+                }
+            });
+}
+
+
+</script>
 	<main class="ps-main">
 	<div class="test">
 		<div class="container">
@@ -168,42 +195,42 @@
 										</ul>
 										<ul class="y-axis">
 											<li><span>100%</span></li>
-											<li><span>80%</span></li>
-											<li><span>60%</span></li>
-											<li><span>40%</span></li>
-											<li><span>20%</span></li>
+											<li><span>75%</span></li>
+											<li><span>50%</span></li>
+											<li><span>25%</span></li>
+											<li><span>0</span></li>
 										</ul>
 										<div class="bars">
 											<div class="bar-group">
-												<div class="bar bar-2 stat-2" style="height: 0%;">
+												<div class="bar bar-2 stat-2" style="height: ${find20}%;">
 													<span>3520</span>
 												</div>
 												
 											</div>
 
 											<div class="bar-group">
-												<div class="bar bar-5 stat-2" style="height: 76%;">
+												<div class="bar bar-5 stat-2" style="height: ${find40}%;">
 													<span>6080</span>
 												</div>
 												
 											</div>
 
 											<div class="bar-group">
-												<div class="bar bar-8 stat-2" style="height: 78%;">
+												<div class="bar bar-8 stat-2" style="height: ${find60}%;">
 													<span>6240</span>
 												</div>
 												
 											</div>
 
 											<div class="bar-group">
-												<div class="bar bar-11 stat-2" style="height: 44%;">
+												<div class="bar bar-11 stat-2" style="height: ${find80}%;">
 													<span>3520</span>
 												</div>
 												
 											</div>
 
 											<div class="bar-group">
-												<div class="bar bar-14 stat-2" style="height: 28%;">
+												<div class="bar bar-14 stat-2" style="height: ${find100}%;">
 													<span>2000</span>
 												</div>
 												
@@ -215,24 +242,12 @@
 							<p class="mb-20">
 								<strong>请您为我们设计的产品打分，如果您有宝贵的意见与建议请参与设计与交流。</strong>
 							</p>
-							<button class="btn btn-success" style="margin-left: 100px;">20分</button>
-							<button class="btn btn-success">40分</button>
-							<button class="btn btn-success">60分</button>
-							<button class="btn btn-success">80分</button>
-							<button class="btn btn-success">100分</button>
-
-
-
-							
-
+							<button class="btn btn-success" style="margin-left: 100px;" onclick="votebutton('${snack.id}','20')">20分</button>
+							<button class="btn btn-success" onclick="votebutton('${snack.id}','40')">40分</button>
+							<button class="btn btn-success" onclick="votebutton('${snack.id}','60')">60分</button>
+							<button class="btn btn-success" onclick="votebutton('${snack.id}','80')">80分</button>
+							<button class="btn btn-success" onclick="votebutton('${snack.id}','100')">100分</button>
 						</div>
-
-
-
-
-
-
-
 					</div>
 				</div>
 			</div>

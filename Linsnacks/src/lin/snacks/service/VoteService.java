@@ -13,4 +13,6 @@ public void insertvote(Vote vote);
 	public List<Vote> findAll();
 	
 	public void deletevote(String id);
+	
+	public Integer findByid(String id,String typevote);
 }
