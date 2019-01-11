@@ -77,5 +77,10 @@ private SnackMapper snackMapper;
 		List<Snack> advanced = snackMapper.findSnackByAdvanced(name);
 		return advanced;
 	}
+	@Override
+	public void updatesnackById(Snack snack) {
+		// TODO Auto-generated method stub
+		snackMapper.updatesnackById(snack);
+	}
 
 }

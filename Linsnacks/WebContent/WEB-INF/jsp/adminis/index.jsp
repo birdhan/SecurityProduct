@@ -55,7 +55,7 @@ ddaccordion.init({
 				修改零食状态信息</div>
 			<div
 				style="width: 80%; height: 200px; background-color: #FFFAFA; margin-left: 10%; margin-top: 10px; border-radius: 5px;">
-				<form action="http://www.baidu.com/" style="margin-top: 20px;" id="form2" enctype="multipart/form-data" method="post">
+				<form action="${pageContext.request.contextPath }/updatesnackById" style="margin-top: 20px;" id="form2" enctype="multipart/form-data" method="post">
 					<input id="idup1" type="hidden" name="id">
 					
 					<div style="width: 92%;margin-left: 4%;margin-top: 32px;border: 1px solid #87CEEB;height: 20px;">

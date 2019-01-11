@@ -312,4 +312,11 @@ public class SnacksAdmin {
 		return "";
 	}
 	
+	@RequestMapping("/updatesnackById")
+	public String updatesnackById(Snack snack) {
+		snackService.updatesnackById(snack);
+		return "redirect:/adminis";
+	}
+	
+	
 }
