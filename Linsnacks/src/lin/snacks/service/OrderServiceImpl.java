@@ -61,6 +61,12 @@ public class OrderServiceImpl implements OrderService {
 		
 	}
 
+	@Override
+	public void upByidnumber(String id, String number) {
+		// TODO Auto-generated method stub
+		ordermapper.upByidnumber(id, number);
+	}
+
 	
 
 }

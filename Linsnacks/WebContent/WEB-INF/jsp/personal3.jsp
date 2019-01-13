@@ -6,9 +6,26 @@
 <jsp:include page="header.jsp"></jsp:include>
 <body>
 <script type="text/javascript">
-function shouhuo(){
-	if(confirm("你确定以收到货物了吗？")){
-		//执行controller 修改订单表属性
+function shouhuo(id){
+	if(confirm("点击确定完成收货后可对商品进行评价。")){
+		
+			
+			$.ajax({
+		        
+		            type: "POST",
+		            dataType: "json",
+		            url: "/Linsnacks/fukuanajax" ,
+		            data: {id:id,
+		            	statusss:"unevaluation"	
+		            },
+		            success: function (data) {
+		            	
+		            	
+		            	window.location.reload();
+		            }
+		            });
+			
+	
 	}
 	
 }
@@ -37,9 +54,9 @@ function shouhuo(){
 		<p><h5>收货地址：${list.uaddress}</h5></p>
 		</div>
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：${list.spic}</h5></p>
-		<p><h4>已支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;" onclick="shouhuo()">确认收货</button></h4></p>
+		<p><h5>money：${list.spic}</h5></p>
+		<p><h4>状态：商家已发货</h4></p>
+		<p><h4><button class="btn btn-success" style="margin-right: 20px;" onclick="shouhuo('${list.id}')">确认收货</button></h4></p>
 		</div>
 		</div>
 	  </div>
@@ -64,7 +81,7 @@ function shouhuo(){
 		</div>
 		<div class="ps-widget__content">
 		  <ul class="ps-list" >
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">待付款</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">购物车</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=noship">待发货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unreceived">待收货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unevaluation">待评价</a></li>

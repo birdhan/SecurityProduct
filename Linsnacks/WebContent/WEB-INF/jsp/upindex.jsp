@@ -55,7 +55,7 @@ function typeone(haha){
 					  <p class="ps-shoe__categories"><a href="#">热度：${list.chickrate}</a></p>
 					</div>
 					</div>
-					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">我的名字是${list.name}</a>
+					<div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">${list.name}</a>
 					  <p class="ps-shoe__categories"><a href="#"> ${list.special}</a></p><span class="ps-shoe__price"> RMB ${list.price}</span>
 					</div>
 				  </div>

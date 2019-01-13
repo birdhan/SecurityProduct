@@ -15,6 +15,8 @@ public interface OrderService {
 	public List<Order> findBystatu(String ostatus);
 	public void updateByidst(String id,String ostatus);
 	public List<Order> findorderByidAndostatus(String uid,String ostatus);
+	
+	public void upByidnumber(String id,String number);
 }
 
 

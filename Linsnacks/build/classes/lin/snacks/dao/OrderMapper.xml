@@ -7,38 +7,46 @@
 		insert into `order` values
 		(#{id},#{uid},#{sid},#{sname},#{spic},#{ostatus},#{owd},#{onumber},#{uaddress},#{utel},#{uname},#{number},#{otime})
 	</insert>
-	 
-	
+
+
 	<select id="findAll" resultType="lin.snacks.pojo.Order">
 		SELECT * FROM `order`
 	</select>
 	<delete id="deleteorder" parameterType="java.lang.String">
-		delete from `order` where id=#{id}
+		delete from `order` where
+		id=#{id}
 	</delete>
 	<update id="updateorder" parameterType="lin.snacks.pojo.Order">
-	UPDATE `order` SET uname=#{uname},spic=#{spic},onumber=#{onumber},number=#{number} WHERE id=#{id}
+		UPDATE `order` SET
+		uname=#{uname},spic=#{spic},onumber=#{onumber},number=#{number} WHERE
+		id=#{id}
 	</update>
-	
-	<select id="findBystatus" parameterType="java.lang.String" resultType="lin.snacks.pojo.Order">
-	select * from `order` where ostatus=#{value}
-	
+
+	<select id="findBystatus" parameterType="java.lang.String"
+		resultType="lin.snacks.pojo.Order">
+		select * from `order` where ostatus=#{value}
+
 	</select>
-	
+
 	<update id="updatestatus" parameterType="java.lang.String">
-	update `order` SET ostatus=#{1} where id=#{0}
-	
+		update `order` SET ostatus=#{1} where id=#{0}
+
 	</update>
-	
 
 
 
 
 
-    <select id="findorderByidAndostatus" parameterType="java.lang.String" resultType="lin.snacks.pojo.Order">
-    SELECT * FROM `order` a WHERE a.uid=#{0} AND a.ostatus=#{1}
-    </select>
- 
 
-   
+	<select id="findorderByidAndostatus" parameterType="java.lang.String"
+		resultType="lin.snacks.pojo.Order">
+		SELECT * FROM `order` a WHERE a.uid=#{0} AND a.ostatus=#{1}
+	</select>
+	<update id="upByidnumber">
+
+		update `order` set onumber=#{1},ostatus='unreceived' where id=#{0}
+	</update>
+
+
 
 </mapper>

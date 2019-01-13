@@ -12,20 +12,30 @@
 <script type="text/javascript">
 
 	var afterUrl =  window.location.search.substring(1);
-alert(afterUrl);
+	
+	var afterUrl2 =  window.location.search.substring(2);
+
+    window.onload=function sssss(){
+    	document.getElementById("id3").value=afterUrl;
+    	document.getElementById("id4").value=afterUrl2;
+    	
+    }
 
 function abcd(){
-	window.close();
-	confirm("ok");
+	confirm("评价成功！");
+	
+	 /* window.close();  */
+	
 	
 }
 
 </script>
 <h5>您的评价是我们前进的动力</h5>
-<form action="">
-
-<textarea rows="5" cols="10" style="width: 95%;"></textarea>
-<input type="button" value="确认" onclick="abcd()">
+<form action="${pageContext.request.contextPath }/addpinglun" id="submin76">
+<input type="hidden" id="id3" name="id">
+<input type="hidden" id="id4" name="oid">
+<textarea rows="5" cols="10" style="width: 95%;" name="message">默认为好评</textarea>
+<input type="submit" value="确认" onclick="abcd()">
 
 </form>
 

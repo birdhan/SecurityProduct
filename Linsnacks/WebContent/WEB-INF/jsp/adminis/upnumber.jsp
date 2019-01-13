@@ -48,75 +48,25 @@ ddaccordion.init({
 <div id="main_container">
 
 
-<!-- 修改订单信息弹窗开始 -->
-		<div class="denglu" style="width: 300px;left: 50%;">
-			<div
-				style="width: 100%; height: 20px; background-color: #87CEEB; border-radius: 15px; padding-top: 4px;">
-				修改订单状态信息</div>
-			<div
-				style="width: 80%; height: 200px; background-color: #FFFAFA; margin-left: 10%; margin-top: 10px; border-radius: 5px;padding-top: 5px;">
-				<form action="${pageContext.request.contextPath }/orderupdate" style="margin-top: 20px;" id="form2" enctype="multipart/form-data" method="post">
-					<input id="idup2" type="hidden" name="id">
-					
-					<div style="width: 92%;margin-left: 4%;margin-top: 30px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">支付价格</label><input id="spic0" type="text" name="spic" style="width: 160px;">
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">用户姓名</label><input id="uname0" type="text" name="uname" style="width: 160px;">
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">运单号码</label><input id="onumber0" type="text" name="onumber" style="width: 160px;"> 
-					
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">购买数量</label><input id="number0" type="text" value="0" name="number" style="width: 160px;"> 
-					
-					</div>
-					<div style="width: 92%;margin-left: 4%;margin-top: 5px;border: 1px solid #87CEEB;height: 20px;">
-					<label style="width: 45px;">订单状态</label><input id="ostatus0" type="text" name="ostatus" style="width: 160px;" disabled="disabled" />
-					
-					</div>
-					
 
-				</form>
-			</div>
-
-			<button onclick="submin2()">提交</button>
-			<button class="bbb">取消</button>
-
-
-		</div>
-<!-- 修改订单信息弹窗结束 -->
 
 
    <script>
-       /*  $(document).ready(function () {
-            $("#imageFile").change(function () {
-
-
-                var fileReader = new FileReader();
-                fileReader.onload = function (e) {
-
-
-                    var ingurl = e.target.result;
-                    var preview = document.getElementById('imangid');
-                    preview.src=e.target.result;
-                }
-                var imageFile = this.files[0];
-                fileReader.readAsDataURL(imageFile);
-            });
-        }) */
-function delete1(shanid) {
-	if (confirm("用户订单请谨慎操作！！！")) {
+    
+function updatehao(shanid) {
+	val=document.getElementById(shanid).value;
+	
+	var str = val.replace(/(^\s*)|(\s*$)/g, '');
+	if(str == '' || str == undefined || str == null){
+		confirm("请输入单号");
+	}else if (confirm("确定上传单号")) {
 		
-		window.location.href = "${pageContext.request.contextPath }/orderdelete?id="
-				+ shanid;
-
-	} else {
-
-	}
+		
+		window.location.href = "${pageContext.request.contextPath }/upbumb?id="+ shanid+"&number="+val; 
+	} 
 
 }
+
     </script>
 
 
@@ -136,15 +86,10 @@ function delete1(shanid) {
                     <div class="menu">
                     <ul>
                     <li><a class="current" href="#">小琳预订后台</a></li>
-                   <!--  <li><a href="">Templates</a></li>
-                    <li><a href="">Custom details</a></li>
-                    <li><a href="">Contact</a></li> -->
+                  
                     </ul>
                     </div> 
-                    
-                    
-                    
-                    
+   
     <div class="center_content">  
     
     
@@ -176,7 +121,7 @@ function delete1(shanid) {
     
     <div class="right_content">            
         
-    <h2>用户订单管理</h2> 
+    <h2>上传单号</h2> 
                     
                     
 <table id="rounded-corner" summary="2007 Major IT Companies' Profit">
@@ -184,26 +129,24 @@ function delete1(shanid) {
     	<tr>
         	<!-- <th scope="col" class="rounded-company"></th> -->
             <th scope="col" class="rounded">订单用户</th>
-            <th scope="col" class="rounded">商品</th>
-            <th scope="col" class="rounded">价格</th>
-            <th scope="col" class="rounded">数量</th>
-            <th scope="col" class="rounded">修改</th>
-            
-            <th scope="col" class="rounded-q4">删除</th>
+            <th scope="col" class="rounded">联系方式</th>
+            <th scope="col" class="rounded">商品名称</th>
+            <th scope="col" class="rounded" style="width: 35%;">运单号</th>
+            <th scope="col" class="rounded-q4">确认</th>
         </tr>
     </thead>
         
     <tbody id="adminTbody">
-    	<c:forEach items="${listone }" var="abc">
+    	<c:forEach items="${findby02 }" var="abcdef">
+    	
     	<tr>
         	
-            <td>${abc.uname }</td>
-            <td>${abc.sname }</td>
-            <td>RMB ${abc.spic }</td>
-            <td>${abc.number }</td> 
-
-            <td><a class="bbb" onclick="update11('${abc.id}','${abc.spic }','${abc.uname }','${abc.onumber }','${abc.number }','${abc.ostatus }')"><img src="images/user_edit.png" alt="" title="" border="0" /></a></td> 
-            <td><a onclick="delete1('${abc.id}')"><img src="images/trash.png" alt="" title="" border="0" /></a></td>
+            <td>${abcdef.uname }</td>
+            <td>${abcdef.utel }</td>
+            <td>${abcdef.sname }</td>
+            
+            <td style="width: 35%;"><input type="text" id="${abcdef.id}"></td>
+            <td><a onclick="updatehao('${abcdef.id}')"><img src="images/valid.png" alt="" title="" border="0" /></a></td>
         </tr>
        </c:forEach>
         
@@ -216,7 +159,9 @@ function delete1(shanid) {
     </tbody>
 </table>
 
-	 <a class="bbb1 bt_green"></a>
+	 <!-- <a class="bbb1 bt_green" style="cursor:pointer;"><span class="bt_green_lft"></span><strong>添加商品</strong><span class="bt_green_r"></span></a> -->
+    
+       <a class="bbb1 bt_green"></a>
     
      
       
@@ -233,6 +178,7 @@ function delete1(shanid) {
 				<li><a href="###" id="jumpPage" onclick="jumpPage()">跳转</a></li>
 			</ul>
 		</div>
+		</div>
     
      
      </div><!-- end of right content-->
@@ -240,10 +186,10 @@ function delete1(shanid) {
                     
   </div>   <!--end of center content -->               
                     
-       </div>             
+                    
     
     
-  <div class="clear"></div>
+    <div class="clear"></div>
     </div> <!--end of main content-->
     
     <div class="footer">

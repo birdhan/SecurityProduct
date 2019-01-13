@@ -27,6 +27,8 @@ public interface OrderMapper {
 	
 	public List<Order> findorderByidAndostatus(String uid,String ostatus);
 	
+	public void upByidnumber(String id,String number);
+	
 	
 	
 }

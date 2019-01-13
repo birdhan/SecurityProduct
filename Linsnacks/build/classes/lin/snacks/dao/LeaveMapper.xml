@@ -12,6 +12,11 @@ VALUES(#{id},#{snacksid},#{uid},#{uname},#{message},#{status},#{ltime})
 <select id="findleaveBySid" parameterType="java.lang.String" resultType="lin.snacks.pojo.Leave">
 SELECT * FROM `leave` a WHERE a.snacksid=#{snacksid} AND a.STATUS='设计交流'
 </select>
+<select id="findByidstatus" parameterType="java.lang.String" resultType="lin.snacks.pojo.Leave">
+SELECT * FROM `leave` a WHERE a.snacksid=#{value} AND a.STATUS='评价'
+</select>
+
+
 <select id="findByAll" resultType="lin.snacks.pojo.Leave">
 select * from `leave`
 

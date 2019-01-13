@@ -6,9 +6,9 @@
 <jsp:include page="header.jsp"></jsp:include>
 <body>
 <script type="text/javascript">
-function pingjia(ping){
-	window.open ('${pageContext.request.contextPath}/tan.jsp?id='+ping, 'newwindow', 'height=300, width=700, top=200, left=400, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
-	
+function pingjia(ping,pang){
+	window.open ('${pageContext.request.contextPath}/tan.jsp?id='+ping+'&oid='+pang, 'newwindow', 'height=300, width=700, top=200, left=400, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
+	window.location.reload();
 }
 
 </script>
@@ -33,11 +33,18 @@ function pingjia(ping){
 		<p><h5>下单时间：${list.otime}</h5></p>
 		<p><h5>运单号：${list.onumber}</h5></p>
 		<p><h5>收货地址：${list.uaddress}</h5></p>
+		<p><h5>状态：交易已完成。</h5></p>
 		</div>
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：${list.spic}</h5></p>
-		<p><h4>实际需支付：30</h4></p>
-		<p><h4><button class="btn btn-success" style="margin-right: 20px;" onclick="pingjia('han')">立即评价</button></h4></p>
+		<form action="${pageContext.request.contextPath }/addpinglun">
+		<input type="hidden" name="id" value="${list.sid }">
+		<input type="hidden" name="oid" value="${list.id }">
+		<textarea style="width: 95%;" placeholder="不填默认为好评" name="message" value="用户选择默认好评"></textarea>
+		<br>
+		<input type="submit" value="确认评价" class="btn btn-success" style="margin-top: 10px;">
+		</form> 
+	
+		<%-- <p><h4><button class="btn btn-success" style="margin-right: 20px;" onclick="pingjia('${list.sid}','${list.id }')">立即评价</button></h4></p> --%>
 		</div>
 		</div>
 	  </div>
@@ -52,7 +59,7 @@ function pingjia(ping){
 		</div>
 		<div class="ps-widget__content">
 		  <ul class="ps-list" >
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">待付款</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">购物车</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=noship">待发货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unreceived">待收货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unevaluation">待评价</a></li>

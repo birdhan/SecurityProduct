@@ -24,13 +24,13 @@
 		</div>
 		<div style="width: 30%;  height: 126px; border-right: 1px solid black; float: left; margin: 10px;">
 		<p><h5>下单时间：${list.otime}</h5></p>
-		<p><h5>运单号：${list.onumber}</h5></p>
+		<p><h5>运单号：商家未上传</h5></p>
 		<p><h5>收货地址：${list.uaddress}</h5></p>
 		</div>
 		<div style="width: 20%;  height: 126px; float: left; margin: 10px;">
-		<p><h5>单价：${list.spic}</h5></p>
-		<p><h4>已支付：30</h4></p>
-		<p><h4>当前状态：已付款，等待卖家发货。</h4></p>
+		<p><h5>需支付：${list.spic}</h5></p>
+		<p><h4>付款方式：货到付款</h4></p>
+		<p><h4>当前状态：等待商家发货。</h4></p>
 		</div>
 		</div>
 	  </div>
@@ -56,7 +56,7 @@
 		</div>
 		<div class="ps-widget__content">
 		  <ul class="ps-list" >
-			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">待付款</a></li>
+			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unpaid">购物车</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=noship">待发货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unreceived">待收货</a></li>
 			<li class="current" style="font-weight: 400;font-family: monospace;margin-bottom: 20px;font-size: 20px;color: black;"><a href="${pageContext.request.contextPath }/findorderByostatus?ostatus=unevaluation">待评价</a></li>

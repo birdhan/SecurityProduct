@@ -13,5 +13,6 @@ public interface LeaveService {
 	public List<Leave> findall();
 	
 	public void deletelee(String id);
+	public List<Leave> findByidstatus(String id);
 	
 }

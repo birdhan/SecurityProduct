@@ -14,4 +14,8 @@ public interface LeaveMapper {
 	
 	public void deletele(String id);
 	
+	public List<Leave> findByidstatus(String id);
+	
+	
+	
 }

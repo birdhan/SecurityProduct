@@ -13,8 +13,8 @@ public class SnackServiceImpl implements SnackService {
 @Autowired
 private SnackMapper snackMapper;
 	@Override
-	public List<Snack> findSnackByAll() {
-		List<Snack> byAll = snackMapper.findSnackByAll();
+	public List<Snack> findSnackByAll(Integer lim) {
+		List<Snack> byAll = snackMapper.findSnackByAll(lim);
 		return byAll;
 	}
 	@Override
@@ -28,8 +28,8 @@ private SnackMapper snackMapper;
 		return design;
 	}
 	@Override
-	public List<Snack> findSnackByOnline() {
-		List<Snack> byOnline = snackMapper.findSnackByOnline();
+	public List<Snack> findSnackByOnline(Integer numbers) {
+		List<Snack> byOnline = snackMapper.findSnackByOnline(numbers);
 		return byOnline;
 	}
 	

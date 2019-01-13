@@ -146,7 +146,7 @@ function successa(shanid) {
         </tr>
     </thead>
         
-    <tbody>
+    <tbody id="adminTbody">
     	<c:forEach items="${listone1 }" var="abcd">
     	<tr>
         	
@@ -171,9 +171,24 @@ function successa(shanid) {
 
 	 <!-- <a class="bbb1 bt_green" style="cursor:pointer;"><span class="bt_green_lft"></span><strong>添加商品</strong><span class="bt_green_r"></span></a> -->
     
-        <div class="pagination">
-        <span class="disabled"><a>上一页</a> <a>下一页 </a></span>
-        </div> 
+       <a class="bbb1 bt_green"></a>
+    
+     
+      
+        <div id="barcon" class="barcon" >
+						<div id="barcon1" class="barcon1"></div>
+						<div id="barcon2" class="barcon2">
+			<ul>
+				<li><a href="javascript:void(0)" onclick="firstPage()">首页</a></li>
+				<li><a href="javascript:void(0)" onclick="prepage()">上一页</a></li>
+				<li><a href="javascript:void(0)"  onclick="nextpage()">下一页</a></li>
+				<li><a href="javascript:void(0)" onclick="prePage()">尾页</a></li>
+				<li><select id="jumpWhere">
+				</select></li>
+				<li><a href="###" id="jumpPage" onclick="jumpPage()">跳转</a></li>
+			</ul>
+		</div>
+		</div>
     
      
      </div><!-- end of right content-->

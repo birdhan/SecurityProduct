@@ -5,13 +5,13 @@ import java.util.List;
 import lin.snacks.pojo.Snack;
 
 public interface SnackService {
-	public List<Snack>findSnackByAll();
+	public List<Snack>findSnackByAll(Integer lim);
 	
 	public Snack findSnackById(String id);
 	
 	public List<Snack> findSnackByDesign();
 	
-	public List<Snack> findSnackByOnline();
+	public List<Snack> findSnackByOnline(Integer numbers);
 	
 	public List<Snack> findSnackByAdvanced(String name);
 	

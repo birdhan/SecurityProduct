@@ -317,14 +317,33 @@ public class SnacksAdmin {
 		return "redirect:/yuyueadmin";
 	}
 	/**
-	 * 单号管理
+	 * 查询订单noship状态
 	 * @return
 	 */
 	@RequestMapping("/numberradmin")
-	public String numberradmin() {
+	public String numberradmin(Model model) {
 		
-		return "";
+		
+		List<Order> findBystatu = orderservice.findBystatu("noship");
+		model.addAttribute("findby02",findBystatu);
+		
+		
+		return "adminis/upnumber";
 	}
+	
+	/**
+	 * 上传单号
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/upbumb")
+	public String upbumb(String id,String number) {
+		
+		orderservice.upByidnumber(id, number);
+		return "redirect:/numberradmin";
+	}
+	
+	
 	
 	@RequestMapping("/updatesnackById")
 	public String updatesnackById(Snack snack) {

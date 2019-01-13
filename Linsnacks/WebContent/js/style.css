@@ -492,3 +492,69 @@ color: #ccc;
 .denglu1.on{
 	top: 100px;
 }
+ a{
+		text-decoration: none;
+	}
+	
+	.table2{
+		border:#C8C8C8 solid;   
+		border-width:1px 0px 0px 1px; 
+		background: #F3F0F0;
+		margin-top:25px;
+	}
+	
+	.td0{
+    	border:#C8C8C8 solid;  
+		border-width:0 0 1px 0;
+	}
+	
+	.td2{
+    	border:#C8C8C8 solid;   
+		border-width:0 1px 1px 0 ;
+	}
+	
+	.barcon {
+		width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+     }
+ 
+	.barcon1 {
+	    font-size: 17px;
+	    float: left;
+	    margin-top: 20px;
+	}
+ 
+	.barcon2 {
+		float: right;
+	}
+ 
+	.barcon2 ul {
+    	margin: 20px 0;
+    	padding-left: 0;
+    	list-style: none;
+    	text-align: center;
+	}
+ 
+	.barcon2 li {
+    	display: inline;
+	}
+ 
+	.barcon2 a {
+		font-size: 16px;
+		font-weight: normal;
+		display: inline-block;
+		padding: 5px;
+		padding-top: 0;
+		color: black;
+		border: 1px solid #ddd;
+		background-color: #fff;
+	}
+ 
+	.barcon2 a:hover{
+		background-color: #eee;
+	}
+ 
+	.ban {
+    	opacity: .4;
+	}

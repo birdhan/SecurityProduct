@@ -6,7 +6,9 @@
 <jsp:include page="header.jsp"></jsp:include>
 <body>
 	<script type="text/javascript">
-	
+	window.onload=function startupd(){
+		updatefen(0);
+	}
 	
 function typeone(haha){
 	if(haha=='all'){
@@ -20,6 +22,13 @@ function typeone(haha){
 	
 }
 
+var numbersnac=8;
+
+function oncla(){
+	
+	updatefen(numbersnac);
+	
+}
 
 function updatefen(gggg) {
 	
@@ -37,7 +46,7 @@ function updatefen(gggg) {
             success: function (data) {
             	var aa = data["list"];
             	var valueOf = data["valueOf"];
-            	ccc=valueOf;
+            	numbersnac=valueOf;
                 var inner="";
                 for(var city in aa){
                 	
@@ -128,7 +137,7 @@ function updatefen(gggg) {
 						
 
 						<!-- 循环商品列表 -->
-						 <c:forEach items="${list}" var="list">
+			<%-- 			 <c:forEach items="${list}" var="list">
 							<div class="grid-item col-xs-3">
 								<div class="grid-item__content-wrapper">
 									<div class="ps-shoe mb-30">
@@ -162,7 +171,7 @@ function updatefen(gggg) {
 									</div>
 								</div>
 							</div>
-						</c:forEach> 
+						</c:forEach>  --%>
 
 </div>
 						
@@ -174,13 +183,13 @@ function updatefen(gggg) {
 			</div>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" style="width: 100%;">
 						<div class="row">
-	<!-- <div
-		style="padding-top: 20px; text-align: center; padding-bottom: 20px;">
+	<div
+		style="padding-top: 20px; text-align: center; padding-bottom: 20px;" class="col-xs-12">
 		<button class="btn btn-success" style="width: 200px;"
-			onclick="updatefen('8')">点此获取更多</button>
-	</div> -->
+			onclick="oncla()">点此获取更多</button>
+	</div>
 </div>
 </div>
 	<jsp:include page="footer.jsp"></jsp:include> </main>

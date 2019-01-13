@@ -27,7 +27,7 @@
 									<div class="ps-shoe__thumbnail">
 										<div class="ps-badge">
 											<span><a 
-											href="${pageContext.request.contextPath }/designdetails?id=${list.id}">加入设计交流</a></span>
+											href="${pageContext.request.contextPath }/designdetails?id=${list.id}">参与设计交流</a></span>
 										</div>
 										<img
 											src="http://localhost:80/pic/${list.picture}"
@@ -39,7 +39,7 @@
 									<div class="ps-shoe__content">
 
 										<div class="ps-shoe__detail">
-											<a class="ps-shoe__name" href="#">我的名字是${list.name}</a>
+											<a class="ps-shoe__name" href="#">${list.name}</a>
 											<p class="ps-shoe__categories">
 												<a href="#"> ${list.special}</a>
 											</p>

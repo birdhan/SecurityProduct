@@ -128,9 +128,40 @@ public class SnacksControler {
 	 */
 	@RequestMapping("/index")
 	public String index(Model model) {
-		List<Snack> list = snackService.findSnackByAll();
+		
+		int parseInt = 0;
+		List<Snack> list = snackService.findSnackByAll(parseInt);
+		int ret=parseInt+8;
+		String valueOf = String.valueOf(ret);
+		model.addAttribute("valueOf",valueOf);
 		model.addAttribute("list", list);
-		return "index";
+		return "index2";
+	}
+	
+	/**
+	 * 
+	 * ajax主页分页查询
+	 * @param model
+	 * @param lim
+	 * @return
+	 */
+	@RequestMapping("/ajaxindex")
+	@ResponseBody
+	public Map<String,Object> ajaxindex(HttpSession session,Model model,HttpServletResponse response,String lim) {
+		int parseInt = Integer.parseInt(lim);
+		System.out.println(parseInt);
+		List<Snack> list = snackService.findSnackByAll(parseInt);
+		int ret=parseInt+8;
+		String valueOf = String.valueOf(ret);
+		/*Map<String,Object> resultMap =new HashMap<String, Object>();*/
+	
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("list", list);
+		map.put("valueOf", valueOf);
+		
+		
+		return map;
+		
 	}
 
 	/**
@@ -220,9 +251,28 @@ public class SnacksControler {
 	 */
 	@RequestMapping("/upindex")
 	public String upindex(Model model) {
-		List<Snack> list = snackService.findSnackByOnline();
+		
+		List<Snack> list = snackService.findSnackByOnline(0);
 		model.addAttribute("list", list);
-		return "upindex";
+		return "upindex2";
+	}
+	
+	/**
+	 * ajax分页刷新上线产品
+	 * @return
+	 */
+	@RequestMapping("/ajaxupindex")
+	@ResponseBody
+	public Map<String,Object> ajaxupindex(String numbers){
+		Map<String,Object> map=new HashMap<>();
+		int parseInt = Integer.parseInt(numbers);
+		
+		List<Snack> findSnackByOnline = snackService.findSnackByOnline(parseInt);
+		int ret=parseInt+8;
+		String valueOf = String.valueOf(ret);
+		map.put("valueOf", valueOf);
+		map.put("findSnackByOnline", findSnackByOnline);
+		return map;
 	}
 
 	/**
@@ -236,7 +286,9 @@ public class SnacksControler {
 	public String upindexdetails(String id, Model model) {
 		Snack snack = snackService.findSnackById(id);
 		snackService.chickrateaddone(id);
+		List<Leave> findByidstatus = leaveService.findByidstatus(id);
 		model.addAttribute("snack", snack);
+		model.addAttribute("findByidstatus", findByidstatus);
 		return "upindex_detail";
 	}
 
@@ -428,7 +480,47 @@ public class SnacksControler {
 	} 
 	
 	
+	/**
+	 * ajax订单状态修改
+	 * @return
+	 */
+	 @RequestMapping("/fukuanajax")
+	 @ResponseBody
+	 public Map<String, Object> fukuanajax(String id,String statusss){
+		
+		 orderservice.updateByidst(id, statusss);
+		 
+		 Map<String, Object> map=new HashMap<>();
+		 map.put("ok", "成功");
+		 return map;
+	 }
 	
+	 
+	 @RequestMapping("/addpinglun")
+	 public String addpinglun(String id,String oid,String message,Leave leave,HttpSession session) {
+		 System.out.println(id);
+		 System.out.println(oid);
+	
+		
+		 
+		
+		 leave.setId(UUID.randomUUID().toString());
+		 
+		 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		 leave.setLtime(df.format(new Date()));
+		 leave.setMessage(message);
+		 leave.setSnacksid(id);
+		 leave.setStatus("评价");
+		 User user = (User) session.getAttribute("user2");
+		 leave.setUid(user.getId());
+		 leave.setUname(user.getName());
+		 
+		 leaveService.addleave(leave);
+		 System.out.println("oid");
+		 orderservice.updateByidst(oid, "finish");
+		 
+		 return "redirect:/findorderByostatus?ostatus=unevaluation";
+	 }
 	
 }
 

@@ -33,5 +33,10 @@ public class LeaveServiceImpl implements LeaveService {
 		leaveMapper.deletele(id);
 		
 	}
+	@Override
+	public List<Leave> findByidstatus(String id) {
+		// TODO Auto-generated method stub
+		return leaveMapper.findByidstatus(id);
+	}
 
 }
