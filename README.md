@@ -44,6 +44,8 @@
 
 - [rhizobia_J](https://github.com/momosecurity/rhizobia_J)：JAVA安全SDK及编码规范。
 
+- [secguide](https://github.com/Tencent/secguide)：腾讯代码安全指南开源，涉及C/C++、JavaScript、Node、Go、Java、Python六门编程语言。
+
 - [rhizobia_P](https://github.com/momosecurity/rhizobia_P)：PHP安全SDK及编码规范。
 
 ##### 自动化代码审计
@@ -75,6 +77,18 @@
 - [锦衣盾](http://www.jxwaf.com)：基于openresty(nginx+lua)开发的下一代web应用防火墙。
 
 - [x-waf](https://github.com/xsec-lab/x-waf)：适用于中小企业的云waf 。
+
+- [ Juggler ](https://.com/C4o/Juggler)：可以与waf联动，一个可能会骗到黑客的系统。
+
+**IAST**
+
+- [火线~洞态IAST](https://hxsecurity.github.io/DongTaiDoc/)：一款专为甲方安全人员、代码审计工程师和0 Day漏洞挖掘人员量身打造的辅助工具，可用于集成devops环境进行漏洞检测、作为代码审计的辅助工具和自动化挖掘0 Day。
+
+- [ openrasp-iast ](https://rasp.baidu.com/doc/install/iast.html)：某种灰盒扫描工具，能够合理应用内部挂钩点信息结合的检测漏洞。
+
+- [ Semmle QL ](https://lgtm.com)：Semmle公司有一个免费的检测平台，可以分析使用Java，Python，JavaScript，TypeScript，C＃，Go，C和C++编写的项目。
+
+
 
 ##### 堡垒机
 
@@ -109,6 +123,8 @@
 - [MozDef](https://github.com/mozilla/MozDef)：Mozilla防御平台,一套实时集成化平台，能够实现监控、反应、协作并改进相关保护功能。
 
 - [驭龙HIDS](https://github.com/ysrc/yulong-hids)：开源的主机入侵检测系统。
+
+- [whids](https://github.com/0xrawsec/whids):带有检测驱动的工件收集的EDR。
 
 - [AgentSmith-HIDS](https://github.com/DianrongSecurity/AgentSmith-HIDS)：轻量级的HIDS系统，低性能损失，使用LKM技术的HIDS工具。
 
@@ -214,6 +230,12 @@
 
 - [Drools](https://www.drools.org)：基于java的功能强大的开源规则引擎。
 
+-  [Radar风控引擎](https://gitee.com/freshday/radar)：轻量级实时风控引擎，适用于反欺诈应用场景，极简的配置，真正做到了开箱即用。
+
+- [ RiskControl ](https://github.com/sunpeak/riskcontrol)：轻量级JAVA实时业务风控系统。
+
+- [ Urule ](https://github.com/youseries/urule/)：实现与纯Java规则引擎，可快速发布规则的定义、维护。
+
 
 ##### 蜜罐
 
@@ -234,6 +256,7 @@
 ###### Web 蜜罐
 
 - [Bukkit Honeypot](https://github.com/Argomirr/Honeypot) Honeypot - Bukkit 的一个插件
+- [Dionaea](https://github.com/atiger77/Dionaea) - web蜜罐，运维上线系统。
 - [EoHoneypotBundle](https://github.com/eymengunay/EoHoneypotBundle) - Symfony2 类型的蜜罐
 - [Glastopf](https://github.com/mushorg/glastopf) - Web 应用蜜罐
 - [Google Hack Honeypot](http://ghh.sourceforge.net) - 旨在提供针对那些使用搜索引擎探测资源的攻击者的侦察
@@ -512,6 +535,7 @@ ICS/SCADA 蜜罐
 
 - [Blacknet](https://github.com/morian/blacknet) - SSH 蜜罐系统
 - [Cowrie](https://github.com/cowrie/cowrie) - Cowrie SSH 蜜罐 (基于 kippo)
+- [Cowrie进阶版](https://github.com/micheloosterhof/cowrie) - Cowrie SSH 蜜罐 (基于 kippo)
 - [DShield docker](https://github.com/xme/dshield-docker) - 启用了 DShield 输出的 Docker 容器
 - [HonSSH](https://github.com/tnich/honssh) - 记录客户端与服务器之间所有 SSH 通信
 - [HUDINX](https://github.com/Cryptix720/HUDINX) - 用于记录暴力破解的低交互 SSH 蜜罐，记录攻击者全部 Shell 交互
