@@ -56,7 +56,7 @@
 
 - [OpenStack Bandit](https://github.com/openstack/bandit/releases/)：基于Python AST的静态分析器，用来查找Python代码中存在的通用安全问题的工具。
 
-- [Cobra](https://github.com/WhaleShark-Team/cobra)：一款源代码安全审计工具，支持检测多种开发语言源代码中的大部分显著的安全问题和漏洞。
+- [Cobra](https://github.com/FeeiCN/Cobra)：一款源代码安全审计工具，支持检测多种开发语言源代码中的大部分显著的安全问题和漏洞。
 
 - [banruo](https://github.com/yingshang/banruo)：基于的fotify的自动化代码审计系统。
 
@@ -79,6 +79,8 @@
 - [x-waf](https://github.com/xsec-lab/x-waf)：适用于中小企业的云waf 。
 
 - [ Juggler ](https://.com/C4o/Juggler)：可以与waf联动，一个可能会骗到黑客的系统。
+
+- [ ModSecurity ](https://github.com/SpiderLabs/ModSecurity) - 跨平台 Web 应用程序防火墙 (WAF) 引擎。它具有强大的基于事件的编程语言，可防止针对 Web 应用程序的一系列攻击，并允许 HTTP 流量监控、日志记录和实时分析。
 
 **IAST**
 
