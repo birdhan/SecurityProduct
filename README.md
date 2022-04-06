@@ -9,9 +9,15 @@
 一个是来自企业安全能力建设的需求，根据需求分类，如WAF、HIDS、Git监控等。
 
 这个收集是一个长期的过程，我在GitHub创建了这个项目，专门用来收集一些优秀的甲方安全项目。还有很多很好的免费开源项目可供选择，下面列出的还只是其中很少的一部分，我将**持续更新**这个项目，欢迎Star。
-更新准备
 
-[toc]
+
+##### 数据安全管理
+
+- [godlp](https://github.com/bytedance/godlp)：字节跳动，godlp 能够应用多种隐私合规标准，敏感数据识别算法，数据脱敏处理。
+
+- [zeek](https://github.com/zeek/zeek)：流量分析的瑞士军刀，可以通过zeek监控网络流量活动。
+
+- [canal](https://github.com/alibaba/canal)：阿里巴巴 MySQL binlog 增量订阅&消费组件。
 
 ##### 资产管理
 
@@ -107,6 +113,10 @@
 - [麒麟堡垒机](https://www.tosec.com.cn/)：开源版只支持一部分功能，剩下的功能需要购买。
 
 ##### HIDS
+
+- [suricata-rules](https://github.com/wandec/suricata-rules)：检测规则，支持CobaltStrike/MSF/Empire/DNS隧道/Weevely/菜刀/冰蝎/挖矿/反弹shell/ICMP隧道等。
+
+- [Elkeid](https://github.com/bytedance/Elkeid)：Elkeid是一个云原生的基于主机的安全(入侵检测与风险识别)解决方案，作者详细的描述了项目架构。
 
 - [OSSEC](https://www.ossec.net)：一款开源的IDS检测系统，包括了日志分析、完整性检查、rook-kit检测，基于时间的警报和主动响应。
 
