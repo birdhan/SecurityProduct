@@ -74,6 +74,12 @@
 
 ##### WAF
 
+- [ModSecurity](https://github.com/SpiderLabs/ModSecurity)：Libmodsecurity 是对 ModSecurity 平台的完全重写。
+
+- [owasp-modsecurity-crs](https://github.com/SpiderLabs/owasp-modsecurity-crs/tree/master/base_rules)：OWASP ModSecurity 核心规则集 (CRS) 项目（官方存储库）。
+
+- [Dshield](https://github.com/ywjt/Dshield)：Dshield是一款轻量级的DDoS防御工具，在防御CC、压测软件等DDoS工具的DDoS攻击方面有很好的表现。
+
 - [ngx_lua_waf](https://github.com/loveshell/ngx_lua_waf)：一个基于LUA-nginx的模块（openresty）的网络应用防火墙。
 
 - [OpenRASP](https://rasp.baidu.com)：一款免费、开源的应用运行时自我保护产品。
