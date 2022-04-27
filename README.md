@@ -13,9 +13,9 @@
 
 ##### 数据安全管理
 
-- [godlp](https://github.com/bytedance/godlp)：字节跳动，godlp 能够应用多种隐私合规标准，敏感数据识别算法，数据脱敏处理。
+- [mysql-sniffer](https://github.com/Qihoo360/mysql-sniffer)：mysql-sniffer 是 mysql 的网络流量分析工具，由奇虎 DBA 和基础架构团队开发。
 
-- [zeek](https://github.com/zeek/zeek)：流量分析的瑞士军刀，可以通过zeek监控网络流量活动。
+- [godlp](https://github.com/bytedance/godlp)：字节跳动，godlp 能够应用多种隐私合规标准，敏感数据识别算法，数据脱敏处理。
 
 - [canal](https://github.com/alibaba/canal)：阿里巴巴 MySQL binlog 增量订阅&消费组件。
 
@@ -167,7 +167,7 @@
 
 ##### 网络流量分析
 
-- [Zeek](https://www.zeek.org)：一个功能强大的网络分析框架。
+- [Zeek](https://www.zeek.org)：一个功能强大的网络分析框架，流量分析的瑞士军刀，可以通过zeek监控网络流量活动。
 
 - [Kismet](https://www.kismetwireless.net/)：一种无线网络和设备检测器，嗅探器，驱动工具和WIDS（无线入侵检测）框架。
 
