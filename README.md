@@ -15,6 +15,8 @@
 
 - [mysql-sniffer](https://github.com/Qihoo360/mysql-sniffer)：mysql-sniffer 是 mysql 的网络流量分析工具，由奇虎 DBA 和基础架构团队开发。
 
+- [riskscanner](https://github.com/riskscanner/riskscanner)：多云安全合规扫描平台，基于 Cloud Custodian 和 Nuclei 引擎，实现对主流公(私)有云资源的安全合规扫描和漏洞扫描。
+
 - [godlp](https://github.com/bytedance/godlp)：字节跳动，godlp 能够应用多种隐私合规标准，敏感数据识别算法，数据脱敏处理。
 
 - [canal](https://github.com/alibaba/canal)：阿里巴巴 MySQL binlog 增量订阅&消费组件。
