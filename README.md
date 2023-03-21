@@ -60,6 +60,10 @@
 
 - [SeMF](https://gitee.com/gy071089/SecurityManageFramwork)：企业内网安全管理平台，包含资产管理，漏洞管理，账号管理，知识库管、安全扫描自动化功能模块，可用于企业内部的安全管理。
 
+##### 安全建设工具
+
+- [dependency-track](https://github.com/DependencyTrack/dependency-track)：Dependency-Track 是一个智能组件分析平台（组件安全分析），允许组织识别和降低软件供应链中的风险。适合在 CI/CD 环境中使用。
+
 ##### 安全开发
 
 - [rhizobia_J](https://github.com/momosecurity/rhizobia_J)：JAVA安全SDK及编码规范。
