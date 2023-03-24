@@ -33,6 +33,8 @@
 
 - [GitGuardian](https://www.gitguardian.com/)：实时扫描GitHub活动的解决方案。
 
+- [AppScan](https://github.com/tongcheng-security-team/AppScan)：APP合规扫描，隐私合规检测
+
 ##### 资产管理
 
 - [BlueKing CMDB](https://github.com/Tencent/bk-cmdb)：一个面向资产及应用的企业级配置管理平台。
