@@ -110,7 +110,7 @@
 
 - [x-waf](https://github.com/xsec-lab/x-waf)：适用于中小企业的云waf 。
 
-- [ Juggler ](https://.com/C4o/Juggler)：可以与waf联动，一个可能会骗到黑客的系统。
+- [ Juggler ](https://github.com/C4o/Juggler)：可以与waf联动，一个可能会骗到黑客的系统。
 
 - [ ModSecurity ](https://github.com/SpiderLabs/ModSecurity) - 跨平台 Web 应用程序防火墙 (WAF) 引擎。它具有强大的基于事件的编程语言，可防止针对 Web 应用程序的一系列攻击，并允许 HTTP 流量监控、日志记录和实时分析。
 
