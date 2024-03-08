@@ -10,9 +10,11 @@
 
 这个收集是一个长期的过程，我在GitHub创建了这个项目，专门用来收集一些优秀的甲方安全项目。还有很多很好的免费开源项目可供选择，下面列出的还只是其中很少的一部分，我将**持续更新**这个项目，欢迎Star。
 
-##### 大模型
+##### 开源大模型
 
 - [langchain](https://github.com/langchain-ai/langchain)：langchain是一个开源框架,允许从事人工智能的开发者将例如GPT-4的大语言模型与外部计算和数据来源结合起来。
+
+- [gpt4all](https://github.com/nomic-ai/gpt4all)：gpt4all开源边缘大型语言模型的生态系统。
 
 ##### 数据安全管理
 
