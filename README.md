@@ -14,6 +14,8 @@
 
 - [langchain](https://github.com/langchain-ai/langchain)：langchain是一个开源框架,允许从事人工智能的开发者将例如GPT-4的大语言模型与外部计算和数据来源结合起来。
 
+- [ollama](https://github.com/ollama/ollama)：在本地启动并运行大型语言模型，支持运行多种本地模型库。
+
 - [gpt4all](https://github.com/nomic-ai/gpt4all)：gpt4all开源边缘大型语言模型的生态系统。
 
 ##### 数据安全管理
