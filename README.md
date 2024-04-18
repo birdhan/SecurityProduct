@@ -14,6 +14,8 @@
 
 - [langchain](https://github.com/langchain-ai/langchain)：langchain是一个开源框架,允许从事人工智能的开发者将例如GPT-4的大语言模型与外部计算和数据来源结合起来。
 
+- [anything-llm](https://github.com/Mintplex-Labs/anything-llm)：全栈应用程序AnythingLLM，为用户提供了构建私有ChatGPT的便利。无论是使用商业的现成LLM，还是流行的开源LLM和VectorDB解决方案，您都可以轻松地在本地或远程托管中运行它，并智能地与提供的任何文档进行对话。
+
 - [ollama](https://github.com/ollama/ollama)：在本地启动并运行大型语言模型，支持运行多种本地模型库。
 
 - [gpt4all](https://github.com/nomic-ai/gpt4all)：gpt4all开源边缘大型语言模型的生态系统。
