@@ -12,6 +12,8 @@
 
 ##### 开源大模型
 
+- [dify](https://github.com/langgenius/dify)：Dify 是一个开源 LLM 应用开发平台。Dify 的直观界面结合了 AI 工作流、RAG 管道、代理功能、模型管理、可观察性功能等，让您可以快速从原型开发转向生产。
+
 - [langchain](https://github.com/langchain-ai/langchain)：langchain是一个开源框架,允许从事人工智能的开发者将例如GPT-4的大语言模型与外部计算和数据来源结合起来。
 
 - [anything-llm](https://github.com/Mintplex-Labs/anything-llm)：全栈应用程序AnythingLLM，为用户提供了构建私有ChatGPT的便利。无论是使用商业的现成LLM，还是流行的开源LLM和VectorDB解决方案，您都可以轻松地在本地或远程托管中运行它，并智能地与提供的任何文档进行对话。
