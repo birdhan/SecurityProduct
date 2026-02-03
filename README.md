@@ -60,6 +60,11 @@
 
 - [Saltstack](https://docs.saltstack.com/en/latest/)：一个具备puppet与func功能为一身的集中化管理平台。
 
+##### 威胁情报
+
+- [SecCrawler](https://github.com/Le0nsec/SecCrawler)：一个方便安全研究人员获取每日安全日报的爬虫和推送程序。
+- [watchvuln](https://github.com/zema1/watchvuln)：一个高价值漏洞采集与推送服务。
+
 ##### 漏洞管理
 
 - [insight](https://github.com/creditease-sec/insight)：洞察-宜信集应用系统资产管理、漏洞全生命周期管理、安全知识库管理三位一体的平台。
